@@ -65,12 +65,12 @@ def generate_tax_slip(request, member_id):
         total_giving = (query2['total_giving'])
         print(total_giving)
         #------------to view tax receipt as web page, run this:---------------------
-        # return render(request, 'tax_receipt.html', {'total_giving': total_giving, 
+        # return render(request, 'tax_receipt_print.html', {'total_giving': total_giving, 
         #                                             'tax_year': tax_year,
         #                                             'date_issued': date_issued    ,
         #                                             'member': queryset2})
         #--------------to view tax receipt as PDF, run any of the two options-----------------
-        html = loader.render_to_string('tax_receipt.html', {'total_giving': total_giving, 
+        html = loader.render_to_string('tax_receipt_print.html', {'total_giving': total_giving, 
                                                             'tax_year': tax_year,
                                                             'date_issued': date_issued,
                                                             'member': queryset2})

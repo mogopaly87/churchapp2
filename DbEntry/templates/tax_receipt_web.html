@@ -1,0 +1,51 @@
+{% extends "tax_base.html" %}
+
+{% block content %}
+<div class="flex-container-tax">
+    <div class="letter-head-container" style="flex-basis: 40em;">
+        <p class="letter-head">
+            CHURCH NAME <br />
+            Newfoundland
+        </p>
+        <p class="contact">
+            <strong>Address:</strong> 1 Main Road, St. John's NL *** *** |
+            <strong>Tel:</strong> 709-***-**** |
+            <strong>Email:</strong> ************ |
+            <strong>Website:</strong> www.*****.com
+        </p>
+    </div><br><br>
+</div>
+<p class="topic">Official Donation Receipt for Income Tax Purposes</p><br><br>
+<div class="body-container">
+    <div>
+    <p><strong>Registration number : </strong>***** **** ******</p>
+    <p>
+        <strong>For the year ending : December 31, {{ tax_year }}</strong>
+    </p>
+    <p><strong>Date Issued : {{ date_issued }}</strong></p>
+    <p><strong>Receipt Number :</strong> CHURCH-20-0{{ member.id }}</p>
+    <p><strong>Receipt Issued At :</strong> St. John's, NL</p>
+    </div>
+    <div class="notice">
+        <p><strong>Donation received from:</strong></p>
+        <br>
+        <p>
+            {{ member.first_name }} {{ member.last_name}}
+        </p>
+        <p>{{ member.street_address }}, {{ member.postal_code }}</p>
+        <p>{{ member.country }}</p>
+    </div>
+</div>
+<div class="message">
+    <p>
+    The donation of <strong> ${{ total_giving }}0 </strong> was received
+    at CMFI NL in St. John's, NL. This amount is eligible for tax
+    purposes. <br />
+    No goods or services were provided in exchange for money given.
+    </p>
+</div>
+<div class="signature">
+    <p>_________________________________________</p>
+</div>
+
+{% endblock content %}
