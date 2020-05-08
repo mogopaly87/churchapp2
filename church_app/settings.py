@@ -25,7 +25,7 @@ SECRET_KEY = "1!*hwck=i=kewau&r6&sc^q1d1rm5&vfz7pg5nmk8r(fxtmk2p"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['churchappmogononso.herokuapp.com']  #'churchappmogononso.herokuapp.com'
+ALLOWED_HOSTS = ['churchappmogononso.herokuapp.com', '127.0.0.1']  #'churchappmogononso.herokuapp.com'
 
 
 # Application definition
