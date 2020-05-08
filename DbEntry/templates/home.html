@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div id="overlay">
+    <div class="container">
+        <div class="flex-container margin-top">
+            <div class="introduction">
+                <h3 style="color: whitesmoke;">Hello {{ user.first_name}}</h3> <br>
+                <h3> Welcome to CMFINL Accounts</h3>
+                <p style="color: whitesmoke;">
+                    Please watch the tutorial videos on the right side of this page for a quick
+                    guide on how to use the CMFI-NL Accounts application.
+                </p>
+            </div>
+
+            <div class="tutorial flex-tutorial">
+                <div class="iframe1">
+                    <iframe width="360" height="240" src="https://www.youtube.com/embed/KtAL1GryYbI?list=PL04V3NZKkrg3gvCoHKKZwCkCNzSTt5WRB" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="iframe2">
+                    <iframe width="360" height="240" src="https://www.youtube.com/embed/KtAL1GryYbI?list=PL04V3NZKkrg3gvCoHKKZwCkCNzSTt5WRB" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

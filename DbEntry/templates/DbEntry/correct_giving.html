@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div>
+  <div class="container">
+      <h3>Update Giving</h3>
+
+      <br />
+      <form
+        id="form-get"
+        method="get"
+        enctype="multipart/form-data"
+      >
+        {% csrf_token %}
+        <div class="form-row form-control-2">
+          <div class="col">
+            <input
+              type="text"
+              class="form-control reg-form"
+              name="fname"
+              placeholder="Search by first name or last name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <button
+              id="search-button"
+              class="btn btn-outline-info reg-form"
+              type="submit"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </form>
+    <div  class="list-wrapper">
+        {% for member in members_list %}
+          <ul class="list-item">
+            <a href="{% url "accounts:update_giving_list" member.id %}"> <li >{{ member.first_name}} | {{ member.last_name }} | {{ member.email}} | {{ member.phone}}</li></a>
+          </ul>
+        {% endfor %}
+      </div>
+      {% if members_list %}
+        <div class="container form-main"><div id="pagination-container"></div></div>
+      {% endif %}
+      
+  </div>
+</div>
+{% endblock content %}

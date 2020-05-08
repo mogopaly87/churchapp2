@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <div class="container">
+    <h3>Record Giving</h3><br>
+        <form id="form-get" method="get" class="" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-row form-control-2">
+                <div class="col">
+                    <input type="text" class="form-control reg-form" name="fname" placeholder="Search by first name or last name" required>
+                </div>
+                <div class="form-group">
+                    <button id="search-button" class="btn btn-outline-info reg-form" type="submit">Search</button>
+                </div>
+            </div>
+            <div class="list-wrapper">
+                {% for member in members_list %}
+                        <ul class="list-item">
+                            <a href="#form-post"><li class="member_id" firstname="{{ member.first_name }}" lastname="{{ member.last_name }}" name="object_info" id="{{member_id}}" value="{{ member.id }}">
+                                {{ member.first_name }} | {{ member.last_name }} | {{ member.email }} | {{ member.street_address }}
+                            </li></a>
+                        </ul>
+                {% endfor %}
+            </div>
+            
+        </form>
+        {% if members_list %}
+            <div class="container form-main2"><div id="pagination-container"></div></div>
+        {% endif %}
+    </div>
+
+    <div id="form-post" class="container">
+        <form method="post" class="form-main post-form" action="{% url "accounts:post_page" %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-row form-control-2">
+                <div class="col">
+                    <input type="text" id="firstName" class="form-control form-border" name="first_name" value="{{ member.first_name }}" required disabled>
+                </div>
+                <div class="col">
+                    <input type="text" id="lastName" class="form-control form-border" name="last_name" value="{{ member.last_name }}" required disabled></div>
+                </div>
+            <div class="form-row form-control-2 ">
+                <div class="col hidden-col">
+                    <input type="number" id="member_id2" class="form-control form-border" name="member_id2" value="" required>
+                </div>
+                <div class="col">
+                  <input type="date" class="form-control form-border" name="giving_date" required>
+                </div>
+                <div class="col">
+                  <input type="number" class="form-control form-border" name="offering_amount" placeholder="Offering Amount" required>
+                </div>
+                <div class="col">
+                  <input type="number" class="form-control form-border" name="tithe_amount" placeholder="Tithe Amount" required>
+                </div>
+                <div class="col">
+                  <input type="number" class="form-control form-border" name="building_fund_amount" placeholder="Building Fund Amount" required>
+                </div>
+                <div class="col">
+                  <input type="number" class="form-control form-border" name="Other_amount" placeholder="Other Amount" required>
+                </div>
+            </div>
+          <div class="form-group">
+              <button class="btn btn-outline-info form-border" type="submit">Post</button>
+          </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}

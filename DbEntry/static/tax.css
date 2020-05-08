@@ -1,0 +1,44 @@
+/* ---------------------Tax slip styling----------------------- */
+.flex-container {
+  background-color: white;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.flex-container div {
+  line-height: 40px;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.flex-container .logo-container #receipt-logo {
+  border-radius: 50%;
+  width: 100px !important;
+}
+
+.letter-head-container .letter-head {
+  text-align: center;
+  margin-bottom: 0;
+  color: #0053a0;
+  font-weight: 400px;
+}
+.letter-head-container .contact {
+  font-size: 18px;
+  margin-top: 0;
+  text-decoration: underline #0053a0 solid;
+}
+.topic {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.notice {
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+.body-container {
+  margin-left: 3em;
+}

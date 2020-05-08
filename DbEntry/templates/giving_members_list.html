@@ -1,0 +1,28 @@
+{% extends 'base.html' %} 
+{% block content %}
+
+<div>
+    {% for member in members_list %}
+        <ul>
+        <a href="{% url "accounts:update_giving_list" member.id %}"> <li>{{ member.first_name}} | {{ member.last_name }} | {{ member.email}} | {{ member.phone}}</li></a>
+        </ul>
+    {% endfor %}
+</div>
+<div class="pagination">
+
+{% if members_list.has_previous %}
+    <a class="page-link" href="?page=1"><<<</a>
+    <a class="page-link" href="?page={{ members_list.previous_page_number }}"><</a>
+{% endif %}
+{% if members_list.has_next %}
+    <a class="page-link" href="?page={{ members_list.next_page_number }}"></a>
+    <a class="page-link" href="?page={{ members_list.paginator.num_pages }}"></a>
+{% endif %}
+{{ members_list.has_previous }}
+{{ members_list.number }}
+{{ members_list.paginator.count }}
+{{ members_list.paginator.number_pages }}
+{{ members_list.paginator.page_range }}
+{{ members_list.has_next }}
+</div>
+{% endblock content %}

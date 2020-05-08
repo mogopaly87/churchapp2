@@ -1,0 +1,47 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="form-group">
+    <a href="{% url "accounts:correct_giving" %}"><button class="btn btn-outline-info form-border" type="submit">Cancel</button></a>
+    </div>
+    <input class="reg-form" id="myInput" type="text" placeholder="...Search">
+  <table class="giving_table list-wrapper">
+    <tr>
+      <th>Giving Date</th>
+      <th>Offering Amount</th>
+      <th>Tithe Amount</th>
+      <th>Building Fund Amount</th>
+      <th>Other Amount</th>
+    </tr>
+    <div class="list-wrapper">
+    {% for post in posts %}
+    <tbody id="myTable">
+      <tr class="list-item">
+        <td>
+          <a href="{% url "accounts:update_giving_object" post.id %}">
+          {{ post.giving_date }}
+        </td>
+        <td >
+          {{ post.offering_amount }}
+        </td>
+        <td >
+          {{ post.tithe_amount }}
+        </td>
+        <td >
+          {{ post.building_fund_amount }}
+        </td>
+        <td >
+          {{ post.Other_amount }}
+        </td>
+      </tr>
+    </tbody>
+    
+    {% endfor %}
+    </div>
+  </table>
+</div>
+{% if posts %}
+        <div class="container form-main"><div id="pagination-container"></div></div>
+{% endif %}
+{% endblock content %}

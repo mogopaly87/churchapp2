@@ -1,0 +1,103 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    {% if title %}
+    <title>Accounts: {{ title }}</title>
+    {% endif %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'simplePagination.css' %}" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="" style="background-image: url(/static/images/home_page_photo.jpg);">
+    <nav
+      class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top nav-edit"
+    >
+      <div class="container">
+        <!-- Brand/logo -->
+        <a
+          class="navbar-brand"
+          href="http://newsite.cmfinl.org/"
+          target="_blank"
+        >
+          <img
+            id="logo"
+            src="{% static 'images/logo.jpeg' %}"
+            alt="logo"
+            style="width:40px;"
+          />
+        </a>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse">
+          <div class="navContainer navbar-nav mr-auto">
+            <ul class="navList navbar-nav">
+              {% if user.is_authenticated %}
+                <a class="nav-link" href="{% url "accounts:home_page" %}"
+                  >Home</a
+                >
+                <a class="nav-link" href="{% url "accounts:register_page" %}"
+                  >Add Member</a
+                >
+                <a class="nav-link" href="{% url "accounts:search_member" %}"
+                  >Post Givings</a
+                >
+                <a class="nav-link" href="{% url "accounts:update_search" %}"
+                  >Update Info</a
+                >
+                <a class="nav-link" href="{% url "accounts:correct_giving" %}"
+                  >Update Giving</a
+                >
+                <a class="nav-link" href="{% url "taxes:search_for_tax" %}"
+                  >Tax</a
+                >
+              {% endif %}
+            </ul>
+          </div>
+          <div class="navbar-nav">
+            {% if user.is_authenticated %}
+            <a class="nav-item nav-link" href="{% url "accounts:logout" %}">Logout</a>
+            {% else %}
+            <a class="nav-item nav-link" href="{% url "accounts:login" %}">Login</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+    {% if messages %} {% for message in messages %}
+    <div class="alert alert-{{ message.tags|safe }}">
+      {{ message}}
+    </div>
+    {% endfor %} {% endif %} {% block content %} {% endblock content %}
+    </div>
+
+    <script src="{% static 'main.js' %}"></script>
+    <script src="{% static 'jquery.simplePagination.js' %}"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
