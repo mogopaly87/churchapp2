@@ -118,8 +118,11 @@ body {
 #logo {
   border-radius: 50%;
   width: 60px !important;
+  height: 55px;
 }
-
+.logo-container {
+  padding-right: 15px;
+}
 .nav-edit {
   margin-bottom: 3em;
 }
