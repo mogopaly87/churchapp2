@@ -86,9 +86,10 @@ WSGI_APPLICATION = 'church_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = dict(default=dict(ENGINE='django.db.backends.postgresql', NAME='church_app', USER=os.environ.get('DB_USER'),
-                              PASSWORD=os.environ.get('DB_PASS'), HOST='127.0.0.1', PORT='5432'))
+# DATABASES = dict(default=dict(ENGINE='django.db.backends.postgresql', NAME='church_app', USER=os.environ.get('DB_USER'),
+#                               PASSWORD=os.environ.get('DB_PASS'), HOST='127.0.0.1', PORT='5432'))
 
+DATABASES = {}
 DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 # Password validation
