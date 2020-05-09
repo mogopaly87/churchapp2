@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import dj_database_url
+# import dj_database_url
 import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -27,7 +27,7 @@ SECRET_KEY = "1!*hwck=i=kewau&r6&sc^q1d1rm5&vfz7pg5nmk8r(fxtmk2p"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['churchappmogononso.herokuapp.com', '127.0.0.1']  #'churchappmogononso.herokuapp.com'
+ALLOWED_HOSTS = ['churchappmogononso.herokuapp.com', '127.0.0.1', 'localhost']  #'churchappmogononso.herokuapp.com'
 
 
 # Application definition
@@ -86,11 +86,11 @@ WSGI_APPLICATION = 'church_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-# DATABASES = dict(default=dict(ENGINE='django.db.backends.postgresql', NAME='church_app', USER=os.environ.get('DB_USER'),
-#                               PASSWORD=os.environ.get('DB_PASS'), HOST='127.0.0.1', PORT='5432'))
+DATABASES = dict(default=dict(ENGINE='django.db.backends.postgresql', NAME='church_app', USER=os.environ.get('DB_USER'),
+                              PASSWORD=os.environ.get('DB_PASS'), HOST='127.0.0.1', PORT='5432'))
 
-DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+# DATABASES = {}
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -162,5 +162,5 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 
-django_heroku.settings(locals())
-del DATABASES['default']['OPTIONS']['sslmode']
+# django_heroku.settings(locals())
+# del DATABASES['default']['OPTIONS']['sslmode']
