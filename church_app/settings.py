@@ -26,7 +26,7 @@ SECRET_KEY = "1!*hwck=i=kewau&r6&sc^q1d1rm5&vfz7pg5nmk8r(fxtmk2p"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['churchappmogononso.herokuapp.com']  #'churchappmogononso.herokuapp.com'
+ALLOWED_HOSTS = ['*','churchappmogononso.herokuapp.com']  #'churchappmogononso.herokuapp.com'
 
 
 # Application definition
@@ -161,7 +161,7 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
-
+# To make postgres work, you must include the code below.
 import dj_database_url 
 prod_db  =  dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)
