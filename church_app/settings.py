@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 # import dj_database_url
-import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,7 +26,7 @@ SECRET_KEY = "1!*hwck=i=kewau&r6&sc^q1d1rm5&vfz7pg5nmk8r(fxtmk2p"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['churchappmogononso.herokuapp.com', '127.0.0.1', 'localhost']  #'churchappmogononso.herokuapp.com'
+ALLOWED_HOSTS = ['churchappmogononso.herokuapp.com']  #'churchappmogononso.herokuapp.com'
 
 
 # Application definition
@@ -162,5 +161,6 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 
-# django_heroku.settings(locals())
-# del DATABASES['default']['OPTIONS']['sslmode']
+import dj_database_url 
+prod_db  =  dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)
