@@ -13,6 +13,7 @@ from django.http import HttpResponse
 from django.template import loader, RequestContext
 import pdfkit
 from datetime import date
+import os
 
 
 # Create your views here.
@@ -65,25 +66,25 @@ def generate_tax_slip(request, member_id):
         total_giving = (query2['total_giving'])
         print(total_giving)
         #------------to view tax receipt as web page, run this:---------------------
-        # return render(request, 'tax_receipt_print.html', {'total_giving': total_giving, 
-        #                                             'tax_year': tax_year,
-        #                                             'date_issued': date_issued    ,
-        #                                             'member': queryset2})
+        return render(request, 'tax_receipt_print.html', {'total_giving': total_giving, 
+                                                    'tax_year': tax_year,
+                                                    'date_issued': date_issued    ,
+                                                    'member': queryset2})
         #--------------to view tax receipt as PDF, run any of the two options-----------------
-        html = loader.render_to_string('tax_receipt_print.html', {'total_giving': total_giving, 
-                                                            'tax_year': tax_year,
-                                                            'date_issued': date_issued,
-                                                            'member': queryset2})
-        path_wkhtmltopdf = r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"
-        config = pdfkit.configuration(wkhtmltopdf=path_wkhtmltopdf)
-        output = pdfkit.from_string(html, output_path=False, configuration=config)
+        # html = loader.render_to_string('tax_receipt_print.html', {'total_giving': total_giving, 
+        #                                                     'tax_year': tax_year,
+        #                                                     'date_issued': date_issued,
+        #                                                     'member': queryset2})
+        # path_wkhtmltopdf = os.environ.get('PATH_WKHTMLTOPDF') #r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"
+        # config = pdfkit.configuration(wkhtmltopdf=path_wkhtmltopdf)
+        # output = pdfkit.from_string(html, output_path=False, configuration=config)
         # OPTION 1---------to auto generate and download receipt, use:-----------
         # response = HttpResponse(output)
         # response['Content-Type'] = 'application/pdf'
         # response['Content-Disposition'] = 'attachment; filename = file.pdf'
         # return response
         # OPTION 2---------to generate receipt in browser, use:-------------------
-        response = HttpResponse(content_type="application/pdf")
-        response.write(output)
-        return response
+        # response = HttpResponse(content_type="application/pdf")
+        # response.write(output)
+        # return response
     return render(request, 'generate_tax_slip.html', {'title': 'Print Tax Slip'})
