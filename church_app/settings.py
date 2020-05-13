@@ -134,8 +134,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+# development static root:
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+# production static root:
+STATIC_ROOT = '/home/mogononso/churchapp2/static'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
