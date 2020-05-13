@@ -3,14 +3,16 @@
 {% block content %}
 <div id="overlay">
     <div class="container">
-        <div class="flex-container margin-top">
+        <div class="flex-container">
             <div class="introduction">
-                <h3 style="color: whitesmoke;">Hello {{ user.first_name}}</h3> <br>
-                <h3> Welcome to CMFINL Accounts</h3>
-                <p style="color: whitesmoke;">
-                    Please watch the tutorial videos on the right side of this page for a quick
-                    guide on how to use the CMFI-NL Accounts application.
-                </p>
+                <div class="box">
+                    <h3 style="color: whitesmoke;">Hello {{ user.first_name}}</h3>
+                    <h3> Welcome to CMFINL Accounts</h3>
+                    <p style="color: whitesmoke;">
+                        Please watch the tutorial videos on the right side of this page for a quick
+                        guide on how to use the CMFI-NL Accounts application.
+                    </p>
+                </div>
             </div>
 
             <div class="tutorial flex-tutorial">

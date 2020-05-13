@@ -13,6 +13,9 @@ $(document).ready(function () {
     $("#firstName").attr("value", firstname);
     $("#lastName").attr("value", lastname);
   });
+  $(".navbar-toggler").click(function () {
+    $(".navbar-collapse").toggleClass("expand");
+  });
   $(".reg-form").click(function () {
     $(".loading-screen").addClass("active");
   });
