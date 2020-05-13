@@ -33,7 +33,7 @@
       <div class="list-wrapper">
         {% for member in members_list %}
         <ul class="list-item">
-          <a href="{% url "accounts:update-submit" member.id %}">
+          <a href="{% url "update-submit" member.id %}">
             <li>{{ member.first_name}} | {{ member.last_name}} | {{ member.postal_code }} | {{ member.phone}}</li>
           </a>
         </ul>

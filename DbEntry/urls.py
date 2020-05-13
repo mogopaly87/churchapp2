@@ -3,7 +3,6 @@ from . import views
 from django.contrib.auth import views as auth_views
 from DbEntry.views import register, post, GiveView, UpdateSearch, updateForm, error_404_view, get_transactions, get_transaction_object, Correct_Giving_Search
 
-app_name='accounts'
 
 urlpatterns = [
     path('post/', post, name='post_page'),

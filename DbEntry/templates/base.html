@@ -46,19 +46,19 @@
           <div class="navContainer navbar-nav mr-auto">
             <ul class="navList navbar-nav">
               {% if user.is_authenticated %}
-                <a class="nav-link" href="{% url "accounts:home_page" %}"
+                <a class="nav-link" href="{% url "home_page" %}"
                   >Home</a
                 >
-                <a class="nav-link" href="{% url "accounts:register_page" %}"
+                <a class="nav-link" href="{% url "register_page" %}"
                   >Add Member</a
                 >
-                <a class="nav-link" href="{% url "accounts:search_member" %}"
+                <a class="nav-link" href="{% url "search_member" %}"
                   >Post Givings</a
                 >
-                <a class="nav-link" href="{% url "accounts:update_search" %}"
+                <a class="nav-link" href="{% url "update_search" %}"
                   >Update Info</a
                 >
-                <a class="nav-link" href="{% url "accounts:correct_giving" %}"
+                <a class="nav-link" href="{% url "correct_giving" %}"
                   >Update Giving</a
                 >
                 <a class="nav-link" href="{% url "taxes:search_for_tax" %}"
@@ -69,9 +69,9 @@
           </div>
           <div class="navbar-nav">
             {% if user.is_authenticated %}
-            <a class="nav-item nav-link" href="{% url "accounts:logout" %}">Logout</a>
+            <a class="nav-item nav-link" href="{% url "logout" %}">Logout</a>
             {% else %}
-            <a class="nav-item nav-link" href="{% url "accounts:login" %}">Login</a>
+            <a class="nav-item nav-link" href="{% url "login" %}">Login</a>
             {% endif %}
           </div>
         </div>

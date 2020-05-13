@@ -31,7 +31,7 @@
     </div>
 
     <div id="form-post" class="container">
-        <form method="post" class="form-main post-form" action="{% url "accounts:post_page" %}" enctype="multipart/form-data">
+        <form method="post" class="form-main post-form" action="{% url "post_page" %}" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-row form-control-2">
                 <div class="col">

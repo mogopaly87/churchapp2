@@ -25,7 +25,7 @@ from django.conf import settings
 urlpatterns = [
     
     path('admin/', admin.site.urls),
-    path('', include('DbEntry.urls', namespace='accounts')),
+    path('', include('DbEntry.urls')),
     path('tax/', include('Tax.urls', namespace='taxes')),
 ]
 

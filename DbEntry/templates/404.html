@@ -11,9 +11,9 @@
         <p class="lead">Sorry, this page does not exist</p>
         <hr class="my-4">
         {% if user.is_authenticated %}
-            <a class="btn btn-primary btn-lg" href="{% url "accounts:home_page"%}" role="button">Return to Home Page</a>
+            <a class="btn btn-primary btn-lg" href="{% url "home_page"%}" role="button">Return to Home Page</a>
         {% else %}
-            <a class="btn btn-primary btn-lg" href="{% url "accounts:login"%}" role="button">Return to Login Page</a>
+            <a class="btn btn-primary btn-lg" href="{% url "login"%}" role="button">Return to Login Page</a>
         {% endif %}
     </div>
 </div>

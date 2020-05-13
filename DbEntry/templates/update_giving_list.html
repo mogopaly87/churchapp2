@@ -3,7 +3,7 @@
 {% block content %}
 <div class="container">
     <div class="form-group">
-    <a href="{% url "accounts:correct_giving" %}"><button class="btn btn-outline-info form-border" type="submit">Cancel</button></a>
+    <a href="{% url "correct_giving" %}"><button class="btn btn-outline-info form-border" type="submit">Cancel</button></a>
     </div>
     <input class="reg-form" id="myInput" type="text" placeholder="...Search">
   <table class="giving_table list-wrapper">
@@ -19,7 +19,7 @@
     <tbody id="myTable">
       <tr class="list-item">
         <td>
-          <a href="{% url "accounts:update_giving_object" post.id %}">
+          <a href="{% url "update_giving_object" post.id %}">
           {{ post.giving_date }}
         </td>
         <td >

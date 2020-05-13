@@ -4,7 +4,7 @@
 <div>
     {% for member in members_list %}
         <ul>
-        <a href="{% url "accounts:update_giving_list" member.id %}"> <li>{{ member.first_name}} | {{ member.last_name }} | {{ member.email}} | {{ member.phone}}</li></a>
+        <a href="{% url "update_giving_list" member.id %}"> <li>{{ member.first_name}} | {{ member.last_name }} | {{ member.email}} | {{ member.phone}}</li></a>
         </ul>
     {% endfor %}
 </div>

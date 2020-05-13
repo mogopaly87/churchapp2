@@ -181,7 +181,7 @@ def updateForm(request, member_id):
                                 street_address=street_address, postal_code=postal_code,
                                 province=province, country=country, phone=phone,
                                 email=email)
-        return redirect(reverse('accounts:update_search'))
+        return redirect(reverse('update_search'))
 
     return render(request, 'update_form.html', {'record': record, 'title': 'Update Info Form'})
 
@@ -260,7 +260,7 @@ def get_transaction_object(request, giving_id):
                                                                         post.id, post.offering_amount,
                                                                         post.tithe_amount, post.building_fund_amount,
                                                                         post.Other_amount))
-        return redirect(reverse('accounts:update_giving_list', args=(post.members_id,)))
+        return redirect(reverse('update_giving_list', args=(post.members_id,)))
     logger.info('{} {} ACCESSED: id:{} - O:{} - T:{} - B:{} - Ot:{}'.format(request.user.username, 
                                                                             request.user.last_name, 
                                                                             post.id, post.offering_amount,
