@@ -174,4 +174,3 @@ EMAIL_HOST_PASSWORD = 'txlzsazeytxodizg' #os.environ.get('EMAIL_APP_PASS')
 # import dj_database_url 
 # prod_db  =  dj_database_url.config(conn_max_age=500)
 # DATABASES['default'].update(prod_db)
-# just checking if it's working
