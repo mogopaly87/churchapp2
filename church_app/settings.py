@@ -23,6 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '1!*hwck=i=kewau&r6&sc^q1d1rm5&vfz7pg5nmk8r(fxtmk2p' #os.getenv("SECRET_KEY")
 
+# deployment for now
+# SECRET_KEY = '1!*hwck=i=kewau&r6&sc^q1d1rm5&vfz7pg5nmk8r(fxtmk2p' #os.getenv("SECRET_KEY")
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -171,3 +174,4 @@ EMAIL_HOST_PASSWORD = 'txlzsazeytxodizg' #os.environ.get('EMAIL_APP_PASS')
 # import dj_database_url
 # prod_db  =  dj_database_url.config(conn_max_age=500)
 # DATABASES['default'].update(prod_db)
+# just checking if it's working

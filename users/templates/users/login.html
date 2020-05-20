@@ -19,12 +19,14 @@
                     </small>
                 </div>
             </form>
-            <!--<div class="loading-screen">-->
-            <!--    <div class="loading-animation">-->
-            <!--        <img src="{% static 'images/logo2.jpg'%}" alt="" class="logo">-->
-            <!--        <div class="loading-bar"></div>-->
-            <!--    </div>-->
-            <!--</div>-->
+            {% if user.is_authenticated %}
+            <div class="loading-screen">
+                <div class="loading-animation">
+                    <img src="{% static 'images/logo2.jpg'%}" alt="" class="logo">
+                    <div class="loading-bar"></div>
+                </div>
+            </div>
+            {% endif %}
         </div>
     </div>
 {% endblock content %}
