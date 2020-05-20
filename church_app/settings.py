@@ -21,10 +21,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = '1!*hwck=i=kewau&r6&sc^q1d1rm5&vfz7pg5nmk8r(fxtmk2p' #os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['mogononso.pythonanywhere.com']  # use this for git push & production: 'mogononso.pythonanywhere.com'
 
@@ -138,7 +138,7 @@ STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 # production static root:
-STATIC_ROOT = '/home/mogononso/churchapp2/static'
+STATIC_ROOT = '/home/mogononso/churchapp/churchapp2/static'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -149,8 +149,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_APP_PASS')
+EMAIL_HOST_USER = 'mogononso@gmail.com' #os.environ.get('EMAIL_USER')
+EMAIL_HOST_PASSWORD = 'txlzsazeytxodizg' #os.environ.get('EMAIL_APP_PASS')
 
 # AWS ---------------
 # AWS_LOCATION = 'static'
@@ -168,6 +168,6 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_APP_PASS')
 
 
 # # To make postgres work, you must include the code below.
-# import dj_database_url 
+# import dj_database_url
 # prod_db  =  dj_database_url.config(conn_max_age=500)
 # DATABASES['default'].update(prod_db)
