@@ -27,7 +27,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECRET_KEY = '1!*hwck=i=kewau&r6&sc^q1d1rm5&vfz7pg5nmk8r(fxtmk2p' #os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['mogononso.pythonanywhere.com']  # use this for git push & production: 'mogononso.pythonanywhere.com'
 
@@ -152,8 +152,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_APP_PASS')
+EMAIL_HOST_USER = 'mogononso@gmail.com' #os.environ.get('EMAIL_USER')
+EMAIL_HOST_PASSWORD = 'txlzsazeytxodizg' #os.environ.get('EMAIL_APP_PASS')
 
 # AWS ---------------
 # AWS_LOCATION = 'static'
