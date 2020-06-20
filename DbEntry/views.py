@@ -220,19 +220,19 @@ class Correct_Giving_Search(ListView):
             elif query == None:
                 pass
 
-@login_required
-def get_transactions(request, member_id):
-    transactions = get_list_or_404(GivingModel, members=member_id)
-    paginator = Paginator(transactions, 7)
-    page = request.GET.get('page')
-    try:
-        posts = paginator.page(page)
-    except  PageNotAnInteger:
-        posts = paginator.page(1)
-    except EmptyPage:
-        posts = paginator.page(paginator.num_pages)
-    # if request.method == ''
-    return render(request, 'update_giving_list.html', {'page': page, 'posts':posts, 'title': 'Giving Record', 'member_id':member_id})
+# @login_required
+# def get_transactions(request, member_id):
+#     transactions = get_list_or_404(GivingModel, members=member_id)
+#     paginator = Paginator(transactions, 7)
+#     page = request.GET.get('page')
+#     try:
+#         posts = paginator.page(page)
+#     except  PageNotAnInteger:
+#         posts = paginator.page(1)
+#     except EmptyPage:
+#         posts = paginator.page(paginator.num_pages)
+#     # if request.method == ''
+#     return render(request, 'update_giving_list.html', {'page': page, 'posts':posts, 'title': 'Giving Record', 'member_id':member_id})
 
 @login_required
 def get_transaction_object(request, giving_id):
