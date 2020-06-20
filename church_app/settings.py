@@ -21,13 +21,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("SECRET_KEY")
+# SECRET_KEY = os.getenv("SECRET_KEY")
 
-# deployment for now
-# SECRET_KEY = '1!*hwck=i=kewau&r6&sc^q1d1rm5&vfz7pg5nmk8r(fxtmk2p' #os.getenv("SECRET_KEY")
+# PRODUCTION for now:
+SECRET_KEY = '1!*hwck=i=kewau&r6&sc^q1d1rm5&vfz7pg5nmk8r(fxtmk2p' #os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['mogononso.pythonanywhere.com']  # use this for git push & production: 'mogononso.pythonanywhere.com'
 
@@ -88,10 +88,11 @@ WSGI_APPLICATION = 'church_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DEVELOPMENT:
 # DATABASES = dict(default=dict(ENGINE='django.db.backends.postgresql', NAME='church_app', USER=os.environ.get('DB_USER'),
 #                               PASSWORD=os.environ.get('DB_PASS'), HOST='127.0.0.1', PORT='5432'))
 
-# For git push and deployment use:
+# GIT AND PRODUCTION:
 DATABASES = dict(default=dict(ENGINE='django.db.backends.postgresql', NAME='churchapp', USER='mogononso',
                               PASSWORD='OkeMog2014', HOST='mogononso-1619.postgres.pythonanywhere-services.com', PORT='11619'))
 
@@ -137,11 +138,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-# development static root:
+# DEVELOPMENT STATIC ROOT:
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
-# production static root:
-STATIC_ROOT = '/home/mogononso/churchapp2/static'
+# PRODUCTION STATIC ROOT:
+STATIC_ROOT = '/home/mogononso/churchapp/churchapp2/static'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -155,23 +156,4 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'mogononso@gmail.com' #os.environ.get('EMAIL_USER')
 EMAIL_HOST_PASSWORD = 'txlzsazeytxodizg' #os.environ.get('EMAIL_APP_PASS')
 
-# AWS ---------------
-# AWS_LOCATION = 'static'
-# AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-# AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-# AWS_STORAGE_BUCKET_NAME = 'church-app-mogononso' #os.environ.get('AWS_STORAGE_BUCKET_NAME_CHURCH')
-# AWS_S3_FILE_OVERWRITE = False
-# AWS_DEFAULT_ACL = 'public-read'
-# AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-
-# STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
-
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-
-# # To make postgres work, you must include the code below.
-# import dj_database_url 
-# prod_db  =  dj_database_url.config(conn_max_age=500)
-# DATABASES['default'].update(prod_db)
-# added again for testing
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True

@@ -52,7 +52,6 @@ def register(request):
             country = request.POST.get('country').capitalize()
             phone = request.POST.get('phone_0')
             email = request.POST.get('email')
-            print(phone)
             # Use the Registration Model to create entries/objects
             RegistrationModel.objects.create(first_name=first_name, last_name=last_name, middle_name=middle_name,
                                             date_of_birth=date_of_birth, street_address=street_address,
@@ -62,11 +61,9 @@ def register(request):
                                                     date_of_birth=date_of_birth, street_address=street_address,
                                                     postal_code=postal_code, province=province, country=country, phone=phone,
                                                     email=email).last()
-            print(member)
             messages.info(request, f'You have successfully added {member.first_name} {member.last_name}')
             form = RegForm()
-            # return render(request, 'register_success.html', {'member': member})
-            
+            # return render(request, 'register_success.html', {'member': member})      
     return render(request, 'register.html', {'title': 'User Register', 'form': form})
 
 #----------------------- RECORD GIVING----------------------------
@@ -123,8 +120,7 @@ def post(request):
 
         GivingModel.objects.create(members_id=member_id2, giving_date=giving_date, offering_amount=offering_amount, tithe_amount=tithe_amount, building_fund_amount=building_fund_amount, Other_amount=other_amount)
 
-        messages.info(request, 'Thank you for giving today')
-
+        messages.info(request, 'Thank you for giving today') 
     return render(request, 'post_success.html', {'title': 'Successful Giving'})
 
 
@@ -275,6 +271,9 @@ def get_transaction_object(request, giving_id):
 
 @csrf_exempt
 def update(request):
+    """ This function is used to link my github repo to my
+    deployment server. Enables auto update after I push 
+    to git."""
     if request.method == "POST":
         '''
         pass the path of the diectory where your project will be 
