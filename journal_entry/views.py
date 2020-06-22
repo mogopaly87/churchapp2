@@ -5,7 +5,7 @@ from django.forms import modelformset_factory
 
 
 def journal_entry(request):
-    JournalFormset = modelformset_factory(JournalEntry, fields='__all__', extra=4)
+    JournalFormset = modelformset_factory(JournalEntry, fields='__all__', extra=1)
     
 
     if request.method == 'POST':
