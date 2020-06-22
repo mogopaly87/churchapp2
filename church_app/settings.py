@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECRET_KEY = os.getenv("SECRET_KEY")
 
 # PRODUCTION for now:
-# SECRET_KEY = '1!*hwck=i=kewau&r6&sc^q1d1rm5&vfz7pg5nmk8r(fxtmk2p' #os.getenv("SECRET_KEY")
+SECRET_KEY = '1!*hwck=i=kewau&r6&sc^q1d1rm5&vfz7pg5nmk8r(fxtmk2p' #os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
