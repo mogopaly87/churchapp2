@@ -26,7 +26,7 @@ SECRET_KEY = '1!*hwck=i=kewau&r6&sc^q1d1rm5&vfz7pg5nmk8r(fxtmk2p' #os.getenv("SE
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mogononso.pythonanywhere.com']  # use this for git push & production: 'mogononso.pythonanywhere.com'
+ALLOWED_HOSTS = []  # use this for git push & production: 'mogononso.pythonanywhere.com'
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'DbEntry.apps.DbentryConfig',
     'Tax.apps.TaxConfig',
     'users.apps.UsersConfig',
+    'journal_entry.apps.JournalEntryConfig',
     'DbEntry.templatetags',
     'crispy_forms',
     'bootstrap4',
@@ -86,12 +87,12 @@ WSGI_APPLICATION = 'church_app.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 # DEVELOPMENT:
-# DATABASES = dict(default=dict(ENGINE='django.db.backends.postgresql', NAME='church_app', USER=os.environ.get('DB_USER'),
-#                               PASSWORD=os.environ.get('DB_PASS'), HOST='127.0.0.1', PORT='5432'))
+DATABASES = dict(default=dict(ENGINE='django.db.backends.postgresql', NAME='church_app', USER=os.environ.get('DB_USER'),
+                              PASSWORD=os.environ.get('DB_PASS'), HOST='127.0.0.1', PORT='5432'))
 
 # GIT AND PRODUCTION:
-DATABASES = dict(default=dict(ENGINE='django.db.backends.postgresql', NAME='churchapp', USER='mogononso',
-                              PASSWORD='OkeMog2014', HOST='mogononso-1619.postgres.pythonanywhere-services.com', PORT='11619'))
+# DATABASES = dict(default=dict(ENGINE='django.db.backends.postgresql', NAME='churchapp', USER='mogononso',
+#                               PASSWORD='OkeMog2014', HOST='mogononso-1619.postgres.pythonanywhere-services.com', PORT='11619'))
 
 # DATABASES = {}
 # DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
@@ -136,10 +137,10 @@ STATIC_URL = '/static/'
 
 
 # DEVELOPMENT STATIC ROOT:
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 # PRODUCTION STATIC ROOT:
-STATIC_ROOT = '/home/mogononso/churchapp/churchapp2/static'
+# STATIC_ROOT = '/home/mogononso/churchapp/churchapp2/static'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

@@ -1,0 +1,17 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+    <div class="container">
+        <h1>The entry page</h1>
+        <form method="POST" action=".">
+        {% csrf_token %}
+            {{form.as_p}}
+             <button id=""class="btn btn-outline-info "type="submit">
+                submit
+                </button>
+        </form>
+    </div>
+        
+{% endblock content %}
+
