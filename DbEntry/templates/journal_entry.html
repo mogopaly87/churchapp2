@@ -2,14 +2,16 @@
 
 {% block content %}
 
-    <div class="container">
+    <div class="container form-main">
         <h1>The entry page</h1>
         <form method="POST" action=".">
         {% csrf_token %}
+        <div class="">
             {{form.as_p}}
-             <button id=""class="btn btn-outline-info "type="submit">
-                submit
-                </button>
+            <button id=""class="btn btn-outline-info" type="submit">
+                Submit
+            </button>
+        </div>
         </form>
     </div>
         

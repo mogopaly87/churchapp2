@@ -6,7 +6,7 @@ from phone_field import PhoneField
 
 class RegistrationModel(models.Model):
 
-    # This model is used to register church members to the database table 'RegistrationModel'
+    """This model is used to register church members to the database table 'RegistrationModel'"""
     first_name = models.CharField(max_length=250, blank=False)
     last_name = models.CharField(max_length=250, blank=False)
     middle_name = models.CharField(max_length=250, blank=True)

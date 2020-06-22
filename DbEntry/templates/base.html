@@ -61,13 +61,15 @@
                 <a class="nav-link" href="{% url "correct_giving" %}"
                   >Update Giving</a
                 >
-                <a class="nav-link" href="{% url "taxes:search_for_tax" %}"
-                  >Tax</a
-                >
-                <a class="nav-link" href="{% url "journal_entry:journal-entry" %}"
-                  >Journal Entry</a
-                >
+                
               {% endif %}
+
+              {% for group in user.groups.all %}
+                {% if group.name == 'supervisor'  %}
+                  <a class="nav-link" href="{% url "taxes:search_for_tax" %}">Tax</a>
+                  <a class="nav-link" href="{% url "journal_entry:journal-entry" %}">Journal Entry</a>                
+                {% endif %}
+              {% endfor %}
             </ul>
           </div>
           <div class="navbar-nav">
