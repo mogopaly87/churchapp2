@@ -163,10 +163,10 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .container-edit.activate p {
@@ -219,11 +219,11 @@ body {
   background: #f5f5f5;
   display: none;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: center;
 }
 
@@ -244,7 +244,7 @@ body {
   position: absolute;
   left: -34px;
   -webkit-animation: bluebar 2.5s ease;
-  animation: bluebar 2.5s ease;
+          animation: bluebar 2.5s ease;
 }
 
 @-webkit-keyframes bluebar {
@@ -314,7 +314,7 @@ td {
   margin-bottom: 10px;
   padding: 10px;
   -webkit-box-shadow: 0px 0px 10px 0px #eee;
-  box-shadow: 0px 0px 10px 0px #eee;
+          box-shadow: 0px 0px 10px 0px #eee;
 }
 
 .simple-pagination ul {
@@ -337,7 +337,7 @@ td {
   border: 1px solid #eee;
   background-color: #fff;
   -webkit-box-shadow: 0px 0px 10px 0px #eee;
-  box-shadow: 0px 0px 10px 0px #eee;
+          box-shadow: 0px 0px 10px 0px #eee;
 }
 
 .simple-pagination .current {
@@ -361,10 +361,10 @@ td {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .flex-container > div {
@@ -388,16 +388,16 @@ td {
 @media (min-width: 48em) {
   .tutorial {
     -webkit-box-flex: 1;
-    -ms-flex: 1 1 50%;
-    flex: 1 1 50%;
+        -ms-flex: 1 1 50%;
+            flex: 1 1 50%;
   }
 }
 
 @media (min-width: 62em) {
   .tutorial {
     -webkit-box-flex: 0;
-    -ms-flex: 0 0 70%;
-    flex: 0 0 70%;
+        -ms-flex: 0 0 70%;
+            flex: 0 0 70%;
   }
 }
 
@@ -406,18 +406,18 @@ td {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-bottom: 1.5em;
 }
 
 .iframe1,
 .iframe2 {
   -webkit-box-flex: 1;
-  -ms-flex: 1 1 100%;
-  flex: 1 1 100%;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
 }
 
 .iframe1 iframe,
@@ -429,8 +429,8 @@ td {
   .iframe1,
   .iframe2 {
     -webkit-box-flex: 1;
-    -ms-flex: 1 1 100%;
-    flex: 1 1 100%;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
   }
 }
 
@@ -438,8 +438,8 @@ td {
   .iframe1,
   .iframe2 {
     -webkit-box-flex: 0;
-    -ms-flex: 0 0 48%;
-    flex: 0 0 48%;
+        -ms-flex: 0 0 48%;
+            flex: 0 0 48%;
   }
 }
 
@@ -449,11 +449,11 @@ td {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: start;
+      -ms-flex-pack: start;
+          justify-content: start;
 }
 
 .introduction .box {
@@ -464,16 +464,16 @@ td {
 @media (min-width: 48em) {
   .introduction {
     -webkit-box-flex: 1;
-    -ms-flex: 1 1 50%;
-    flex: 1 1 50%;
+        -ms-flex: 1 1 50%;
+            flex: 1 1 50%;
   }
 }
 
 @media (min-width: 62em) {
   .introduction {
     -webkit-box-flex: 0;
-    -ms-flex: 0 0 30%;
-    flex: 0 0 30%;
+        -ms-flex: 0 0 30%;
+            flex: 0 0 30%;
   }
 }
 
@@ -499,11 +499,11 @@ td {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
@@ -554,7 +554,7 @@ button:not(.navbar-toggler).search-buttons {
 @media (max-width: 768px) {
   .navbar-collapse {
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+        flex-wrap: wrap;
     height: 0;
     visibility: hidden;
     width: 100%;
@@ -570,21 +570,21 @@ button:not(.navbar-toggler).search-buttons {
   }
   .navbar-collapse .navbar-nav {
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   .navbar-collapse .navbar-nav.navContainer {
     width: 100%;
   }
   .navbar-collapse .nav-link {
     -webkit-box-flex: 1;
-    -ms-flex: 1 1 30%;
-    flex: 1 1 30%;
+        -ms-flex: 1 1 30%;
+            flex: 1 1 30%;
   }
 }
 
 .navbar .container {
   -ms-flex-wrap: wrap !important;
-  flex-wrap: wrap !important;
+      flex-wrap: wrap !important;
 }
 
 @media (max-width: 768px) {

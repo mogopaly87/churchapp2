@@ -91,7 +91,7 @@ WSGI_APPLICATION = 'church_app.wsgi.application'
 #                               PASSWORD=os.environ.get('DB_PASS'), HOST='127.0.0.1', PORT='5432'))
 
 # GIT AND PRODUCTION:
-DATABASES = dict(default=dict(ENGINE='django.db.backends.postgresql', NAME='churchapp', USER='mogononso',
+DATABASES = dict(default=dict(ENGINE='django.db.backends.postgresql', NAME='churchapp2', USER='mogononso',
                               PASSWORD='OkeMog2014', HOST='mogononso-1619.postgres.pythonanywhere-services.com', PORT='11619'))
 
 # Password validation
