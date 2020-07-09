@@ -27,7 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('DbEntry.urls')),
     path('tax/', include('Tax.urls', namespace='taxes')),
-    # path('journal_entry/', include('journal_entry.urls', namespace='journal_entry')),
+    path('journal_entry/', include('journal_entry.urls', namespace='journal_entry')),
 ]
 
 if settings.DEBUG:
