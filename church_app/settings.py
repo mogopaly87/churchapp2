@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECRET_KEY = os.getenv("SECRET_KEY")
 
 # PRODUCTION for now:
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = 'os.getenv("SECRET_KEY")'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -91,8 +91,8 @@ WSGI_APPLICATION = 'church_app.wsgi.application'
 #                               PASSWORD=os.getenv('DB_PASS'), HOST='127.0.0.1', PORT='5432'))
 
 # GIT AND PRODUCTION:
-DATABASES = dict(default=dict(ENGINE='django.db.backends.postgresql', NAME='churchapp2', USER=os.getenv('DB_USER'),
-                              PASSWORD=os.getenv('DB_PASS'), HOST='mogononso-1619.postgres.pythonanywhere-services.com', PORT='11619'))
+DATABASES = dict(default=dict(ENGINE='django.db.backends.postgresql', NAME='churchapp2', USER='os.getenv("DB_USER")',
+                              PASSWORD='os.getenv("DB_PASS")', HOST='mogononso-1619.postgres.pythonanywhere-services.com', PORT='11619'))
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
