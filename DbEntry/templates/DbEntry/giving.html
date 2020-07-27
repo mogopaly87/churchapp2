@@ -68,30 +68,30 @@
     <div id="form-post" class="container">
         <form method="post" class="form-main post-form" action="{% url "post_page" %}" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="form-control-2">
-                <div class="">
+            <div class="form-control-2 form-control-2.1">
+                <div class="flex-content">
                     <input type="text" id="firstName" class="form-border" name="first_name" value="{{ member.first_name }}" required disabled>
                 </div>
-                <div class="">
+                <div class="flex-content">
                     <input type="text" id="lastName" class="form-border" name="last_name" value="{{ member.last_name }}" required disabled></div>
                 </div>
-            <div class=" form-control-input ">
+            <div class=" form-control-3 ">
                 <div class="hidden-col">
                     <input type="number" id="member_id2" class="form-border" name="member_id2" value="" required>
                 </div>
-                <div class="">
+                <div class="flex-content-2">
                   <input type="date" class="form-border" name="giving_date" required>
                 </div>
-                <div class="">
+                <div class="flex-content-2">
                   <input type="number" class="form-border" name="offering_amount" placeholder="Offering Amount" required>
                 </div>
-                <div class="">
+                <div class="flex-content-2">
                   <input type="number" class="form-border" name="tithe_amount" placeholder="Tithe Amount" required>
                 </div>
-                <div class="">
+                <div class="flex-content-2">
                   <input type="number" class="form-border" name="building_fund_amount" placeholder="Building Fund Amount" required>
                 </div>
-                <div class="">
+                <div class="flex-content-2">
                   <input type="number" class="form-border" name="Other_amount" placeholder="Other Amount" required>
                 </div>
             </div>

@@ -43,6 +43,7 @@ body {
   margin-bottom: 2em;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   div{
     width: 48%;
     input{
@@ -50,14 +51,32 @@ body {
       padding: 0.44em 0;
     }
   }
+  @media (max-width:600px){
+    .flex-content{
+      flex: 1 1 100%;
+    }
+  }
 }
 
-.form-control-input{
+
+.form-control-3{
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   input{
     border-radius: 0.25rem !important;
     padding: 0.44em 0;
+  }
+  @media (max-width: 1200px){
+    div{
+      width: 48%;
+      input{
+        width: 100%;
+      }
+    }
+    .flex-content-2{
+      flex: 1 1 50%;
+    }
   }
 }
 .search-result {
