@@ -5,8 +5,8 @@
   </div>
   <form method="post" action="">
     {% csrf_token %}
-    <div class="form-row">
-      <div class="col">
+    <div class="form-control-2">
+      <div class="flex-content">
         <label for="offering">Offering Amount</label>
         <input
           class="form-control form-border"
@@ -16,7 +16,7 @@
           value="{{ post.offering_amount }}"
         />
       </div>
-      <div class="col">
+      <div class="flex-content">
         <label for="tithe">Tithe Amount</label>
         <input
           class="form-control form-border"
@@ -26,7 +26,7 @@
           value="{{ post.tithe_amount }}"
         />
       </div>
-      <div class="col">
+      <div class="flex-content">
         <label for="building">Building Fund Amount</label>
         <input
           class="form-control form-border"
@@ -36,7 +36,7 @@
           value="{{ post.building_fund_amount }}"
         />
       </div>
-      <div class="col">
+      <div class="flex-content">
         <label for="other">Other Amount</label>
         <input
           class="form-control form-border"
