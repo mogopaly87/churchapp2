@@ -11,7 +11,7 @@
       enctype="multipart/form-data"
     >
       {% csrf_token %}
-      <div class="form-row form-control-2">
+      <div class="form-row">
         <div class="col">
           <input type="text" id="first_name3" class="form-control reg-form" name="first_name" placeholder="First name" value="{{ record.first_name }}" required>
         </div>
@@ -22,7 +22,7 @@
           <input type="text" id="last_name3" class="form-control reg-form" name="last_name" placeholder="Last name" value="{{ record.last_name}}" required>
         </div>
       </div>
-      <div class="form-row form-control-2">
+      <div class="form-row">
         <div class="col form-group">
           <input type="text" id="date_of_birth3" class="form-control reg-form" name="date_of_birth" placeholder="DOB: yyyy-mm-dd"  value="{{ record.date_of_birth|date:"Y-m-d" }}" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required>
         </div>
@@ -33,7 +33,7 @@
           <input type="email" id="email3" class="form-control reg-form" name="email" placeholder="Email"  value="{{ record.email }}">
         </div>
       </div>
-      <div class="form-row form-control-2">
+      <div class="form-row">
         <div class="col-4 form-group">
           <input type="text" id="address3" class="form-control reg-form" name="street_address" placeholder="Address, Ex: 1 Example Street"  value="{{ record.street_address }}" required>
         </div>

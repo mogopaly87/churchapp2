@@ -47,6 +47,35 @@ body {
 } */
 .form-control-2 {
   margin-bottom: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.form-control-2 div {
+  width: 48%;
+}
+
+.form-control-2 div input {
+  width: 100%;
+  padding: 0.44em 0;
+}
+
+.form-control-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.form-control-input input {
+  border-radius: 0.25rem !important;
+  padding: 0.44em 0;
 }
 
 .search-result {
@@ -201,7 +230,7 @@ body {
 }
 
 .form-border {
-  border-radius: 25px !important;
+  border-radius: .25rem !important;
 }
 
 .logo {
