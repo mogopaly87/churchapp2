@@ -59,6 +59,7 @@ body {
 
 .form-control-2 div {
   width: 48%;
+  margin: 0.2em 0;
 }
 
 .form-control-2 div input {
@@ -136,36 +137,6 @@ body {
   cursor: pointer;
 }
 
-/*.form-radio label {
-  text-align: center;
-  padding: 0 0 0.5em 0;
-  background-color: darkslategray;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-} */
-/* .form-radio:hover input:before {
-  border-color: slategray;
-}
-.form-radio:hover label {
-  background-color: slategray;
-}
-
-.form-radio label.active {
-  background-color: green;
-} */
-/* .form-radio input:before {
-  position: absolute;
-  visibility: visible;
-  top: 50%;
-  left: 0;
-  transform: translate(0, -50%);
-  content: "";
-  height: 80px;
-  width: 100%;
-} */
 #form-post {
   display: none;
 }
