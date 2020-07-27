@@ -64,6 +64,9 @@ body {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  div{
+    margin: 0.2em 0;
+  }
   input{
     border-radius: 0.25rem !important;
     padding: 0.44em 0;
@@ -77,6 +80,11 @@ body {
     }
     .flex-content-2{
       flex: 1 1 50%;
+    }
+  }
+  @media (max-width: 600px){
+    .flex-content-2{
+      flex: 1 1 100%;
     }
   }
 }
