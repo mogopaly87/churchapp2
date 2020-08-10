@@ -23,6 +23,33 @@
                         </ul>
                 {% endfor %}
             </div>
+
+            {% comment %} <table class="list-wrapper table table-hover table-dark">
+                {% if members_list %}
+                <thead>
+                    <tr>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Address</th>
+                    </tr>
+                </thead>
+                {% endif %}
+                <div class="list-wrapper">
+                    {% for member in members_list %}
+                    <tbody>
+                        <tr  class="list-item">
+                            <td ><a href="#form-post">{{ member.first_name}}</a></td>
+                            <td>{{ member.last_name }}</td>
+                            <td>{{ member.email}}</td>
+                            <td>{{ member.phone}}</td>
+                            <td>{{ member.street_address}}</td>
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                </div>
+            </table> {% endcomment %}
             
         </form>
         {% if members_list %}
@@ -80,24 +107,24 @@
                     <input type="number" id="member_id2" class="form-border" name="member_id2" value="" required>
                 </div>
                 <div class="flex-content-2">
-                  <input type="date" class="form-border" name="giving_date" required>
+                    <input type="date" class="form-border" name="giving_date" required>
                 </div>
                 <div class="flex-content-2">
-                  <input type="number" class="form-border" name="offering_amount" placeholder="Offering Amount" required>
+                    <input type="number" class="form-border" name="offering_amount" placeholder="Offering Amount" required>
                 </div>
                 <div class="flex-content-2">
-                  <input type="number" class="form-border" name="tithe_amount" placeholder="Tithe Amount" required>
+                    <input type="number" class="form-border" name="tithe_amount" placeholder="Tithe Amount" required>
                 </div>
                 <div class="flex-content-2">
-                  <input type="number" class="form-border" name="building_fund_amount" placeholder="Building Fund Amount" required>
+                    <input type="number" class="form-border" name="building_fund_amount" placeholder="Building Fund Amount" required>
                 </div>
                 <div class="flex-content-2">
-                  <input type="number" class="form-border" name="Other_amount" placeholder="Other Amount" required>
+                    <input type="number" class="form-border" name="Other_amount" placeholder="Other Amount" required>
                 </div>
             </div>
-          <div class="form-group">
-              <button class="btn btn-outline-info form-border" type="submit">Post</button>
-          </div>
+            <div class="form-group">
+                <button class="btn btn-outline-info form-border" type="submit">Post</button>
+            </div>
         </form>
     </div>
 </div>

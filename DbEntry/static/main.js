@@ -12,6 +12,7 @@ $(document).ready(function () {
     $("#lastName").val(lastname);
     $("#firstName").attr("value", firstname);
     $("#lastName").attr("value", lastname);
+    console.log(currentInput)
   });
   $(".navbar-toggler").click(function () {
     $(".navbar-collapse").toggleClass("expand");
