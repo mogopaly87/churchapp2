@@ -501,6 +501,15 @@ button:not(.navbar-toggler) {
   width: 100%;
 }
 
+.gen-tax-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .tax-slip-gen{
   @media (max-width: 768px){
       margin-top: 1em;
