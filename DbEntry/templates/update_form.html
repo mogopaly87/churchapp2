@@ -24,7 +24,7 @@
           </div>
 
           <div class="flex-content">
-            <input type="text" id="date_of_birth3" class="form-control reg-form" name="date_of_birth" placeholder="DOB: yyyy-mm-dd"  value="{{ record.date_of_birth|date:"Y-m-d" }}" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required>
+            <input type="date" id="date_of_birth3" class="form-control reg-form" name="date_of_birth" placeholder="DOB: yyyy-mm-dd"  value="{{ record.date_of_birth|date:"Y-m-d" }}" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required>
           </div>
           <div class="flex-content">
             <input type="text" id="phone3" class="form-control reg-form" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="000-000-0000" value="{{ record.phone|phone_number }}">

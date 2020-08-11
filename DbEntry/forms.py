@@ -1,8 +1,8 @@
 from .models import RegistrationModel
-from django.forms import ModelForm, forms
+from django import forms
 
 
-class RegForm(ModelForm):
+class RegForm(forms.ModelForm):
     required_css_class = 'required'
 
     def __init__(self, *args, **kwargs):
@@ -12,7 +12,8 @@ class RegForm(ModelForm):
         self.fields['middle_name'].widget.attrs.update({'class': 'form-control reg-form'})
         self.fields['date_of_birth'].widget.attrs.update({'class': 'form-control reg-form', 
                                                             'pattern': '[0-9]{4}-[0-9]{2}-[0-9]{2}',
-                                                            'placeholder': 'yyyy-mm-dd'})
+                                                            'placeholder': 'yyyy-mm-dd', 'type':'date'})
+                                                            
         self.fields['street_address'].widget.attrs.update({'class': 'form-control reg-form'})
         self.fields['postal_code'].widget.attrs.update({'class': 'form-control reg-form', 
                                                         'pattern': '[A-Za-z]{1}[0-9]{1}[A-Za-z]{1} [0-9]{1}[A-Za-z]{1}[0-9]{1}', 
@@ -29,4 +30,7 @@ class RegForm(ModelForm):
     class Meta:
         model = RegistrationModel
         fields = '__all__'
+        widgets = {
+            'date_of_birth': forms.DateInput(attrs={'type':'date'})
+        }
 

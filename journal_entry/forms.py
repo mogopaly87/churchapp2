@@ -1,7 +1,7 @@
-from django.forms import ModelForm
+from django import forms
 from .models import JournalEntry
 
-class EntryForm(ModelForm):
+class EntryForm(forms.ModelForm):
     required_css_class = 'required'
 
     def __init__(self, *args, **kwargs):
@@ -16,4 +16,7 @@ class EntryForm(ModelForm):
     class Meta:
         model = JournalEntry
         fields = '__all__'
+        widgets = {
+            'entry_date': forms.DateInput(attrs={'type':'date'})
+        }
         
