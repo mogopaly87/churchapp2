@@ -10,10 +10,10 @@ class JournalEntry(models.Model):
         ('Other', 'Other'),
     ]
 
-    entry_type = models.CharField(choices=ENTRY_CHOICES, max_length=200)
+    entry_type = models.CharField(choices=ENTRY_CHOICES, max_length=200, blank=False)
     entry_value = models.FloatField(blank=False, null=False)
     entry_date =models.DateField(default=date.today, blank=False, null=False)
-    short_note = models.TextField(max_length=300, blank=False, null=False, default='')
+    short_note = models.TextField(max_length=500, blank=False, null=False, default='')
 
     class Meta:
         verbose_name_plural = "Journal Entries"
