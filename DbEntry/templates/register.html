@@ -2,17 +2,20 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<div class="container">
+<div id="update-container"  class="container">
   <h3 style="padding-bottom: 1em;" class="container container-edit container-reg">Add New Member</h3>
-  <form id="register-form" method="post" class="form-main" action="">
-    {% csrf_token %}
-    <div class="container container-edit container-reg">
-      {{ form.as_p }}
-      <div class="form-group">
-      <button class="btn btn-outline-info reg-form" type="submit">Submit</button>
-    </div>
-    </div>
-    
-  </form>
+  <div class="form-main">
+    <form id="update-form" method="post" action="">
+      {% csrf_token %}
+      <div class="container container-edit container-reg">
+      {% comment %} <div class="form-control-2"> {% endcomment %}
+        {{ form.as_p }}
+        {% comment %} <div class="form-group"> {% endcomment %}
+          <button class="btn btn-outline-info reg-form" type="submit">Submit</button>
+        {% comment %} </div> {% endcomment %}
+      </div>
+      
+    </form>
+  </div>
 </div>
 {% endblock %}
