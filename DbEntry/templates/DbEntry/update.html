@@ -30,7 +30,7 @@
           </button>
         </div>
       </div>
-      <div class="list-wrapper">
+      {% comment %} <div class="list-wrapper">
         {% for member in members_list %}
         <ul class="list-item">
           <a href="{% url "update-submit" member.id %}">
@@ -38,8 +38,34 @@
           </a>
         </ul>
         {% endfor %}
-        
-      </div>
+      </div> {% endcomment %}
+
+      <table class="list-wrapper table table-hover table-dark">
+        {% if members_list %}
+          <thead>
+            <tr>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone</th>
+            </tr>
+          </thead>
+        {% endif %}
+        <div class="list-wrapper">
+        {% for member in members_list %}
+          <tbody>
+            <tr  class="list-item">
+              <td><a href="{% url "update-submit" member.id %}">{{ member.first_name}}</a></td>
+              <td>{{ member.last_name }}</td>
+              <td>{{ member.email}}</td>
+              <td>{{ member.phone}}</td>
+            </tr>
+          </tbody>
+          {% endfor %}
+        </div>
+      </table>
+
+
       </form>
       {% if members_list %}
         <div class="container form-main"><div id="pagination-container"></div></div>
