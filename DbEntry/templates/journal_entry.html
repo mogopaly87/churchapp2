@@ -1,17 +1,17 @@
 {% extends 'base.html' %} 
 
 {% block content %}
-
+    <h3 class="journal-entry">Journal Entry</h3>
     <div class="container form-main">
-        <h1>The entry page</h1>
+        
         <form method="POST" action=".">
         {% csrf_token %}
-        <div class="">
-            {{form.as_p}}
-            <button id=""class="btn btn-outline-info" type="submit">
-                Submit
-            </button>
-        </div>
+            <div class="">
+                {{form.as_p}}
+                <button id=""class="btn btn-outline-info" type="submit">
+                    Submit
+                </button>
+            </div>
         </form>
     </div>
         
