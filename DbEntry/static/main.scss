@@ -54,7 +54,7 @@ body {
   background-size: cover;
 }
 
-#update-info-container{
+#update-container{
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -62,7 +62,7 @@ body {
   .back-button{
     align-self: flex-start;
   }
-  #update-info-form{
+  #update-form{
     .form-control-2 {
       margin-bottom: 2em;
       display: flex;

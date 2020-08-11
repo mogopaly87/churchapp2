@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% load template_filters %}
 {% block content %}
-  <div id="update-info-container" class="container">
+  <div id="update-container" class="container">
     <div class="form-group back-button">
         <a href="{% url "update_search" %}"><button class="btn btn-outline-info form-border" type="submit">Cancel</button></a>
     </div>
     <div class="form-main">
-      <form id="update-info-form"
+      <form id="update-form"
         method="post"
         class="form-main post-form"
         enctype="multipart/form-data"

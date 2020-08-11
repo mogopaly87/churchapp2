@@ -1,57 +1,57 @@
 {% extends 'base.html' %} {% block content%}
-<div class="container">
-  <div class="form-group">
+<div id="update-container" class="container">
+  <div class="form-group back-button">
     <a href="{% url "update_giving_list" member_id %}"><button class="btn btn-outline-info form-border" type="submit">Cancel</button></a>
   </div>
-  <form method="post" action="">
-    {% csrf_token %}
-    <div class="form-control-2">
-      <div class="flex-content">
-        <label for="offering">Offering Amount</label>
-        <input
-          class="form-control form-border"
-          type="number"
-          id="offering"
-          name="offering"
-          value="{{ post.offering_amount }}"
-        />
+    <div class="form-main">
+    <form id="update-form" method="post" action="">
+      {% csrf_token %}
+      <div class="form-control-2">
+        <div class="flex-content">
+          <label for="offering">Offering Amount</label>
+          <input
+            class="form-control form-border"
+            type="number"
+            id="offering"
+            name="offering"
+            value="{{ post.offering_amount }}"
+          />
+        </div>
+        <div class="flex-content">
+          <label for="tithe">Tithe Amount</label>
+          <input
+            class="form-control form-border"
+            type="number"
+            id="tithe"
+            name="tithe"
+            value="{{ post.tithe_amount }}"
+          />
+        </div>
+        <div class="flex-content">
+          <label for="building">Building Fund Amount</label>
+          <input
+            class="form-control form-border"
+            type="number"
+            id="building"
+            name="building"
+            value="{{ post.building_fund_amount }}"
+          />
+        </div>
+        <div class="flex-content">
+          <label for="other">Other Amount</label>
+          <input
+            class="form-control form-border"
+            type="number"
+            id="other"
+            name="other"
+            value="{{ post.Other_amount }}"
+          />
+        </div>
+        <button class="btn btn-outline-info form-border" type="submit">
+          Update
+        </button>
       </div>
-      <div class="flex-content">
-        <label for="tithe">Tithe Amount</label>
-        <input
-          class="form-control form-border"
-          type="number"
-          id="tithe"
-          name="tithe"
-          value="{{ post.tithe_amount }}"
-        />
-      </div>
-      <div class="flex-content">
-        <label for="building">Building Fund Amount</label>
-        <input
-          class="form-control form-border"
-          type="number"
-          id="building"
-          name="building"
-          value="{{ post.building_fund_amount }}"
-        />
-      </div>
-      <div class="flex-content">
-        <label for="other">Other Amount</label>
-        <input
-          class="form-control form-border"
-          type="number"
-          id="other"
-          name="other"
-          value="{{ post.Other_amount }}"
-        />
-      </div>
-    </div>
-    <div class="form-group">
-      <button class="btn btn-outline-info form-border" type="submit">
-        Update
-      </button>
-    </div>
-  </form>
+    </form>
+  </div>
 </div>
 {% endblock %}

@@ -75,7 +75,7 @@ body {
   background-size: cover;
 }
 
-#update-info-container {
+#update-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,12 +91,12 @@ body {
           align-items: center;
 }
 
-#update-info-container .back-button {
+#update-container .back-button {
   -ms-flex-item-align: start;
       align-self: flex-start;
 }
 
-#update-info-container #update-info-form .form-control-2 {
+#update-container #update-form .form-control-2 {
   margin-bottom: 2em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -108,25 +108,25 @@ body {
       flex-wrap: wrap;
 }
 
-#update-info-container #update-info-form .form-control-2 div {
+#update-container #update-form .form-control-2 div {
   width: 48%;
   margin: 2em 0;
 }
 
-#update-info-container #update-info-form .form-control-2 div input {
+#update-container #update-form .form-control-2 div input {
   width: 100%;
   padding: 0.44em 0;
 }
 
 @media (max-width: 600px) {
-  #update-info-container #update-info-form .form-control-2 .flex-content {
+  #update-container #update-form .form-control-2 .flex-content {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;
   }
 }
 
-#update-info-container #update-info-form .form-button {
+#update-container #update-form .form-button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
