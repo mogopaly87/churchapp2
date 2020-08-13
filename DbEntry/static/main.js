@@ -31,6 +31,7 @@ $(document).ready(function () {
     });
   // add 'activate' class to slowly show login form and others
   $(".container-edit").addClass("activate");
+  $(".form-main").addClass("activate");
 
   // used to filter update_giving_list
   $(document).ready(function () {

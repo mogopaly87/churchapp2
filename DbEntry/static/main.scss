@@ -22,15 +22,20 @@ html {
     justify-content: center;
     color: whitesmoke;
 }
-.form-main {
+
+.form-main{
+  opacity: 0;
+}
+.form-main.activate {
+  opacity: 1;
   margin-bottom: 10em;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 700px;
+  // width: 900px;
   form{
     background-color: rgba(0,0,0,0.5);
-    padding: 2em 6em;
+    // padding: 2em 6em;
     border-radius: 0.25rem;
     width: 100%;
     label{
@@ -62,12 +67,16 @@ body {
   .back-button{
     align-self: flex-start;
   }
+  h3{
+    padding: 0 0 1em 0;
+  }
   #update-form{
     .form-control-2 {
       margin-bottom: 2em;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      padding: 2em;
       div{
         width: 48%;
         margin: 2em 0;
@@ -135,18 +144,6 @@ body {
   display: none;
 }
 
-/* .section-flex {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-} */
-
-/* .form-radio {
-  flex: 0 0 45%;
-  display: flex;
-  position: relative;
-}*/
-
 .form-radio input {
   visibility: hidden;
   z-index: 3;
@@ -184,21 +181,24 @@ body {
 }
 
 .container-edit {
-  padding-bottom: 2em;
-  width: 35% !important;
+  // padding: 5em;
+  // width: 25% !important;
   opacity: 0;
-  transition: all 2s;
+  transition: all 2s ease-in-out;
+  // p{
+  //   width: 1%;
+  // }
 }
 .margin-top {
   margin-top: 8em;
 }
 .container-edit.activate {
   opacity: 1;
-  transition: all 2s;
-  width: 100% !important;
+  padding: 2em;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  
   p {
     width: 100%;
     @media (min-width: 48em) {
@@ -210,19 +210,20 @@ body {
         margin-right: 1%;
       }
     }
+    transition: all 1s ease-in-out;
   }
   label {
     color: rgba(white, 0.5);
   }
   button{
-    position: unset;
-    left: unset;
-    transform: unset;
+    position: unset !important;
+    left: unset !important;
+    transform: unset !important;
   }
 }
 .container-reg {
   padding-bottom: 4em;
-  width: 65% !important;
+  width: 100% !important;
 }
 
 #id_password,
@@ -301,17 +302,9 @@ td {
 .paginate {
   margin-bottom: 3em;
 }
-/* .navContainer .navList li.activate a {
-  color: white !important;
-} */
 
 .nav-link.active {
   color: white !important;
-  /* background-color: #a5b7c3; */
-  /* border-radius: 17px;
-  padding-right: 1.7rem !important;
-  padding-left: 1.7rem !important;
-  padding-bottom: 0.5rem !important; */
 }
 .phone-field-ext,
 #id_phone_1 {
@@ -447,7 +440,6 @@ td {
 }
 
 #overlay {
-  /* z-index: 2; */
   height: -webkit-fill-available;
   height: stretch;
   @media (min-width: 62em) {
@@ -486,7 +478,6 @@ button:not(.navbar-toggler) {
   color: white !important;
   border-radius: 0.5em;
   transition: 0.6s all ease-in-out;
-  // margin-top: 1em !important;
   &:hover {
     background-color: white !important;
     color: #17a2b8 !important;

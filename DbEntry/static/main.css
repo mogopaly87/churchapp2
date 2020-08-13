@@ -32,6 +32,11 @@ html body .overlay {
 }
 
 .form-main {
+  opacity: 0;
+}
+
+.form-main.activate {
+  opacity: 1;
   margin-bottom: 10em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -42,21 +47,19 @@ html body .overlay {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 700px;
 }
 
-.form-main form {
+.form-main.activate form {
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 2em 6em;
   border-radius: 0.25rem;
   width: 100%;
 }
 
-.form-main form label {
+.form-main.activate form label {
   color: whitesmoke;
 }
 
-.form-main form button {
+.form-main.activate form button {
   position: relative;
   left: 50%;
   -webkit-transform: translate(-50%);
@@ -96,6 +99,10 @@ body {
       align-self: flex-start;
 }
 
+#update-container h3 {
+  padding: 0 0 1em 0;
+}
+
 #update-container #update-form .form-control-2 {
   margin-bottom: 2em;
   display: -webkit-box;
@@ -106,6 +113,7 @@ body {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  padding: 2em;
 }
 
 #update-container #update-form .form-control-2 div {
@@ -196,16 +204,6 @@ body {
   display: none;
 }
 
-/* .section-flex {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-} */
-/* .form-radio {
-  flex: 0 0 45%;
-  display: flex;
-  position: relative;
-}*/
 .form-radio input {
   visibility: hidden;
   z-index: 3;
@@ -244,11 +242,9 @@ body {
 }
 
 .container-edit {
-  padding-bottom: 2em;
-  width: 35% !important;
   opacity: 0;
-  -webkit-transition: all 2s;
-  transition: all 2s;
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
 }
 
 .margin-top {
@@ -257,9 +253,7 @@ body {
 
 .container-edit.activate {
   opacity: 1;
-  -webkit-transition: all 2s;
-  transition: all 2s;
-  width: 100% !important;
+  padding: 2em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -272,6 +266,8 @@ body {
 
 .container-edit.activate p {
   width: 100%;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 @media (min-width: 48em) {
@@ -291,15 +287,15 @@ body {
 }
 
 .container-edit.activate button {
-  position: unset;
-  left: unset;
-  -webkit-transform: unset;
-          transform: unset;
+  position: unset !important;
+  left: unset !important;
+  -webkit-transform: unset !important;
+          transform: unset !important;
 }
 
 .container-reg {
   padding-bottom: 4em;
-  width: 65% !important;
+  width: 100% !important;
 }
 
 #id_password,
@@ -394,16 +390,8 @@ td {
   margin-bottom: 3em;
 }
 
-/* .navContainer .navList li.activate a {
-  color: white !important;
-} */
 .nav-link.active {
   color: white !important;
-  /* background-color: #a5b7c3; */
-  /* border-radius: 17px;
-  padding-right: 1.7rem !important;
-  padding-left: 1.7rem !important;
-  padding-bottom: 0.5rem !important; */
 }
 
 .phone-field-ext,
@@ -592,7 +580,6 @@ td {
 }
 
 #overlay {
-  /* z-index: 2; */
   height: -webkit-fill-available;
   height: -moz-available;
   height: stretch;
