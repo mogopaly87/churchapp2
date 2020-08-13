@@ -185,6 +185,8 @@ body {
   // width: 25% !important;
   opacity: 0;
   transition: all 2s ease-in-out;
+  
+  
   // p{
   //   width: 1%;
   // }
@@ -212,13 +214,33 @@ body {
     }
     transition: all 1s ease-in-out;
   }
+  .flex-content{
+    width: 100%;
+    @media (min-width: 48em) {
+      width: 49%;
+      &:nth-child(even) {
+        margin-left: 1%;
+      }
+      &:nth-child(odd) {
+        margin-right: 1%;
+      }
+    }
+    transition: all 2s ease-in-out;
+
+  }
+  
   label {
     color: rgba(white, 0.5);
   }
-  button{
+  .reg-form-button{
     position: unset !important;
     left: unset !important;
     transform: unset !important;
+  }
+  .update-info-button{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
   }
 }
 .container-reg {

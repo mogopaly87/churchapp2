@@ -282,15 +282,40 @@ body {
   }
 }
 
+.container-edit.activate .flex-content {
+  width: 100%;
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+}
+
+@media (min-width: 48em) {
+  .container-edit.activate .flex-content {
+    width: 49%;
+  }
+  .container-edit.activate .flex-content:nth-child(even) {
+    margin-left: 1%;
+  }
+  .container-edit.activate .flex-content:nth-child(odd) {
+    margin-right: 1%;
+  }
+}
+
 .container-edit.activate label {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.container-edit.activate button {
+.container-edit.activate .reg-form-button {
   position: unset !important;
   left: unset !important;
   -webkit-transform: unset !important;
           transform: unset !important;
+}
+
+.container-edit.activate .update-info-button {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
 }
 
 .container-reg {
