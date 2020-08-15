@@ -630,3 +630,10 @@ button:not(.navbar-toggler) {
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
+.alert{
+  position: absolute !important;
+  width: 30% !important;
+  right: 0 !important;
+  margin-right: 4.5em !important;
+}

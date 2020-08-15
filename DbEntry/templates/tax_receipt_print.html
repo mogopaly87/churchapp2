@@ -49,12 +49,23 @@
         </div>
       </div>
       <div class="message">
+
+        {% if total_giving is None %}
         <p>
-          The donation of <strong> ${{ total_giving }}0 </strong> was received
-          at CHURCH NAME in St. John's, NL. This amount is eligible for tax
-          purposes. No goods or services were provided in exchange for money
-          given.
-        </p>
+            The donation of <strong> $0 </strong> was received
+            at CHURCH NAME in St. John's, NL. This amount is eligible for tax
+            purposes. No goods or services were provided in exchange for money
+            given.
+          </p>
+        {% else %}
+        <p>
+            The donation of <strong> ${{ total_giving }}0 </strong> was received
+            at CHURCH NAME in St. John's, NL. This amount is eligible for tax
+            purposes. No goods or services were provided in exchange for money
+            given.
+          </p>
+        {% endif %}
+        
       </div>
       <div class="signature">
         <p>_________________________________________</p>
