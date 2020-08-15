@@ -66,6 +66,56 @@ html body .overlay {
           transform: translate(-50%);
 }
 
+.journal-form-main {
+  opacity: 0;
+  -webkit-transition: all 1.5s ease-in-out;
+  transition: all 1.5s ease-in-out;
+}
+
+.journal-form-main form {
+  padding: 0;
+  width: 0em;
+  -webkit-transition: padding 1.5s ease-in-out;
+  transition: padding 1.5s ease-in-out;
+}
+
+.journal-form-main.activate {
+  opacity: 1;
+  margin-bottom: 10em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  -webkit-transition: opacity 1.5s ease-in-out;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.journal-form-main.activate form {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0.25rem;
+  width: 100%;
+  padding: 2em;
+  -webkit-transition: padding 1.5s ease-in-out;
+  transition: padding 1.5s ease-in-out;
+}
+
+.journal-form-main.activate form label {
+  color: whitesmoke;
+}
+
+.journal-form-main.activate form button {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
 .form-main2 {
   margin-bottom: 3em;
 }

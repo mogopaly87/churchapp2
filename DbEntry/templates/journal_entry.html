@@ -2,9 +2,9 @@
 
 {% block content %}
     <h3 class="journal-entry">Journal Entry</h3>
-    <div class="container form-main">
+    <div class="container journal-form-main">
         
-        <form method="POST" action="">
+        <form class="journal-form" method="POST" action="">
         {% csrf_token %}
             <div class="journal-form-holder">
                 {{form.as_p}}

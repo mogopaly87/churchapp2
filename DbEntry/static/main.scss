@@ -48,6 +48,44 @@ html {
     }
   }
 }
+
+.journal-form-main{
+  opacity: 0;
+  transition: all 1.5s ease-in-out;
+  form{
+    padding: 0;
+    width: 0em;
+    transition: padding 1.5s ease-in-out;
+  }
+}
+
+.journal-form-main.activate{
+  opacity: 1;
+  margin-bottom: 10em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  transition: opacity 1.5s ease-in-out;
+  // width: 900px;
+  form{
+    background-color: rgba(0,0,0,0.5);
+    // padding: 2em 6em;
+    border-radius: 0.25rem;
+    width: 100%;
+    padding: 2em;
+    transition: padding 1.5s ease-in-out;
+    label{
+      color: whitesmoke;
+    }
+    button{
+      position: relative;
+      left: 50%;
+      transform: translate(-50%);
+    }
+  }
+  
+}
 .form-main2 {
   margin-bottom: 3em;
 }
