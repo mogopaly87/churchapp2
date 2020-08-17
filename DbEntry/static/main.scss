@@ -138,8 +138,10 @@ body {
   }
 }
 
-
 .form-control-3{
+  display: none;
+}
+.form-control-3.active{
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

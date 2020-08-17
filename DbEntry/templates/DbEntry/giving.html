@@ -3,7 +3,7 @@
 {% block content %}
 <div>
     <div class="container">
-    <h3>Record Giving</h3><br>
+        <h3>Record Giving</h3><br>
         <form id="form-get" method="get" class="" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-row">
@@ -14,7 +14,7 @@
                     <button id="search-button" class="search-buttons btn btn-outline-info reg-form" type="submit">Search</button>
                 </div>
             </div>
-            <div class="list-wrapper">
+            {% comment %} <div class="list-wrapper">
                 {% for member in members_list %}
                         <ul class="list-item">
                             <a href="#form-post"><li class="member_id" firstname="{{ member.first_name }}" lastname="{{ member.last_name }}" name="object_info" id="{{member_id}}" value="{{ member.id }}">
@@ -22,9 +22,9 @@
                             </li></a>
                         </ul>
                 {% endfor %}
-            </div>
+            </div> {% endcomment %}
 
-            {% comment %} <table class="list-wrapper table table-hover table-dark">
+            <table class="list-wrapper table table-hover table-dark">
                 {% if members_list %}
                 <thead>
                     <tr>
@@ -40,7 +40,9 @@
                     {% for member in members_list %}
                     <tbody>
                         <tr  class="list-item">
-                            <td ><a href="#form-post">{{ member.first_name}}</a></td>
+                            <td id="click-link" >
+                                <a data-member-id="{{ member.id }}" data-first-name="{{ member.first_name }}" data-last-name="{{ member.last_name }}" name="object_info" href="#form-post">{{ member.first_name}}</a>
+                            </td>
                             <td>{{ member.last_name }}</td>
                             <td>{{ member.email}}</td>
                             <td>{{ member.phone}}</td>
@@ -49,7 +51,7 @@
                     </tbody>
                     {% endfor %}
                 </div>
-            </table> {% endcomment %}
+            </table> 
             
         </form>
         {% if members_list %}
@@ -95,13 +97,14 @@
     <div id="form-post" class="container">
         <form method="post" class="form-main post-form" action="{% url "post_page" %}" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="form-control-2 form-control-2.1">
+            <div class="form-control-post">
                 <div class="flex-content">
                     <input type="text" id="firstName" class="form-border" name="first_name" value="{{ member.first_name }}" required disabled>
                 </div>
                 <div class="flex-content">
                     <input type="text" id="lastName" class="form-border" name="last_name" value="{{ member.last_name }}" required disabled></div>
                 </div>
+            </div>
             <div class=" form-control-3 ">
                 <div class="hidden-col">
                     <input type="number" id="member_id2" class="form-border" name="member_id2" value="" required>
