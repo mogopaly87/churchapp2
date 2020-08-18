@@ -1,18 +1,24 @@
 $(document).ready(function () {
-  $("li[name='object_info']").click(function () {
-    $("li[name='object_info']").next().removeClass("active");
-    $(this).next().addClass("active");
-    $("#form-post").addClass("active");
-    let currentInput = $(this).val();
-    let firstname = $(this).attr("firstname");
-    let lastname = $(this).attr("lastname");
-    $("#member_id2").val(currentInput);
-    $("#member_id2").attr("value", currentInput);
-    $("#firstName").val(firstname);
-    $("#lastName").val(lastname);
-    $("#firstName").attr("value", firstname);
-    $("#lastName").attr("value", lastname);
+
+  // on clicking the firstName link with name='object_id',
+  $("#click-link a[name='object_info']").click(function (){
+    // add 'active' class to posting form.
+    // 'active' class changes form to display:block
+    $("#form-post").addClass("active")
+    $(".form-control-post").addClass("active")
+    $(".form-control-3").addClass("active")
+
+    // get data attributes for the firstName, LastName & ID
+    var firstName = $(this).data("first-name");
+    var lastName = $(this).data("last-name");
+    var memberId = $(this).data("member-id");
+
+    // assign data attributes to the value of inputs (firstName, lastName, member_id2)
+    $("#firstName").val(firstName);
+    $("#lastName").val(lastName);
+    $("#member_id2").val(memberId);
   });
+
   $(".navbar-toggler").click(function () {
     $(".navbar-collapse").toggleClass("expand");
   });
@@ -30,6 +36,10 @@ $(document).ready(function () {
     });
   // add 'activate' class to slowly show login form and others
   $(".container-edit").addClass("activate");
+  $(".form-main").addClass("activate");
+  $(".journal-form-main").addClass("activate");
+  $(".login-page").addClass("activate");
+  // $("#update-container").addClass("activate");
 
   // used to filter update_giving_list
   $(document).ready(function () {
