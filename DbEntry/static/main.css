@@ -396,6 +396,11 @@ body {
   transition: all 1.5s ease-in-out;
 }
 
+.login-page.activate legend,
+.login-page.activate label {
+  color: whitesmoke;
+}
+
 .margin-top {
   margin-top: 8em;
 }

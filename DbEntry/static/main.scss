@@ -301,6 +301,10 @@ body {
   padding: 2em 4em;
   border-radius: 0.25em;
   transition: all 1.5s ease-in-out;
+  legend,
+  label{
+    color: whitesmoke;
+  }
 }
 
 
