@@ -13,10 +13,10 @@ html {
     }
   }
 }
-#form-post .post-form {
-  margin-bottom: 10em;
-  margin-top: 5em;
-}
+// #form-post .post-form {
+//   margin-bottom: 10em;
+//   margin-top: 5em;
+// }
 .journal-entry{
   display: flex;
     justify-content: center;
@@ -195,6 +195,61 @@ body {
   display: none;
   &.active {
     display: block;
+    margin-bottom: 5em;
+  }
+  .disabled-inputs{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 1em 0 1em 0;
+    input{
+      width: 48%;
+    }
+  }
+  .posting-form{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 1em 0 1em 0;
+    .form-border{
+      width: 33%;
+      padding: .375rem .75rem
+    }
+  }
+  @media screen and (max-width: 992px){
+    .disabled-inputs{
+      flex-wrap: wrap;
+      .form-border{
+        width: 48%;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .disabled-inputs{
+      flex-wrap: wrap;
+      .form-border{
+        width: 100%;
+      }
+      .form-border:nth-child(1){
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+  @media screen and (max-width: 992px){
+    .posting-form{
+      flex-wrap: wrap;
+      .form-border{
+        width: 48%;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .posting-form{
+      flex-wrap: wrap;
+      .form-border{
+        width: 100%;
+      }
+    }
   }
 }
 

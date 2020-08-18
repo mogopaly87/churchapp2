@@ -16,11 +16,6 @@ html body .overlay {
   top: 0;
 }
 
-#form-post .post-form {
-  margin-bottom: 10em;
-  margin-top: 5em;
-}
-
 .journal-entry {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -270,6 +265,81 @@ body {
 
 #form-post.active {
   display: block;
+  margin-bottom: 5em;
+}
+
+#form-post .disabled-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin: 1em 0 1em 0;
+}
+
+#form-post .disabled-inputs input {
+  width: 48%;
+}
+
+#form-post .posting-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin: 1em 0 1em 0;
+}
+
+#form-post .posting-form .form-border {
+  width: 33%;
+  padding: .375rem .75rem;
+}
+
+@media screen and (max-width: 992px) {
+  #form-post .disabled-inputs {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  #form-post .disabled-inputs .form-border {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #form-post .disabled-inputs {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  #form-post .disabled-inputs .form-border {
+    width: 100%;
+  }
+  #form-post .disabled-inputs .form-border:nth-child(1) {
+    margin-bottom: 0.5em;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #form-post .posting-form {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  #form-post .posting-form .form-border {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #form-post .posting-form {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  #form-post .posting-form .form-border {
+    width: 100%;
+  }
 }
 
 .navitem-right {

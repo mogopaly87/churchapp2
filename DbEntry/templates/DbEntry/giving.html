@@ -14,15 +14,6 @@
                     <button id="search-button" class="search-buttons btn btn-outline-info reg-form" type="submit">Search</button>
                 </div>
             </div>
-            {% comment %} <div class="list-wrapper">
-                {% for member in members_list %}
-                        <ul class="list-item">
-                            <a href="#form-post"><li class="member_id" firstname="{{ member.first_name }}" lastname="{{ member.last_name }}" name="object_info" id="{{member_id}}" value="{{ member.id }}">
-                                {{ member.first_name }} | {{ member.last_name }} | {{ member.email }} | {{ member.street_address }}
-                            </li></a>
-                        </ul>
-                {% endfor %}
-            </div> {% endcomment %}
 
             <table class="list-wrapper table table-hover table-dark">
                 {% if members_list %}
@@ -59,53 +50,31 @@
         {% endif %}
     </div>
 
-    {% comment %} <div id="form-post" class="container">
-        <form method="post" class="form-main post-form" action="{% url "post_page" %}" enctype="multipart/form-data">
-            {% csrf_token %}
-            <div class="form-row form-control-2">
-                <div class="col">
-                    <input type="text" id="firstName" class="form-control form-border" name="first_name" value="{{ member.first_name }}" required disabled>
-                </div>
-                <div class="col">
-                    <input type="text" id="lastName" class="form-control form-border" name="last_name" value="{{ member.last_name }}" required disabled></div>
-                </div>
-            <div class="form-row form-control-2 ">
-                <div class="col hidden-col">
-                    <input type="number" id="member_id2" class="form-control form-border" name="member_id2" value="" required>
-                </div>
-                <div class="col">
-                  <input type="date" class="form-control form-border" name="giving_date" required>
-                </div>
-                <div class="col">
-                  <input type="number" class="form-control form-border" name="offering_amount" placeholder="Offering Amount" required>
-                </div>
-                <div class="col">
-                  <input type="number" class="form-control form-border" name="tithe_amount" placeholder="Tithe Amount" required>
-                </div>
-                <div class="col">
-                  <input type="number" class="form-control form-border" name="building_fund_amount" placeholder="Building Fund Amount" required>
-                </div>
-                <div class="col">
-                  <input type="number" class="form-control form-border" name="Other_amount" placeholder="Other Amount" required>
-                </div>
-            </div>
-          <div class="form-group">
-              <button class="btn btn-outline-info form-border" type="submit">Post</button>
-          </div>
-        </form>
-    </div> {% endcomment %}
     <div id="form-post" class="container">
-        <form method="post" class="form-main post-form" action="{% url "post_page" %}" enctype="multipart/form-data">
+        <form method="post" class="post-form" action="{% url "post_page" %}" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="form-control-post">
-                <div class="flex-content">
-                    <input type="text" id="firstName" class="form-border" name="first_name" value="{{ member.first_name }}" required disabled>
-                </div>
-                <div class="flex-content">
-                    <input type="text" id="lastName" class="form-border" name="last_name" value="{{ member.last_name }}" required disabled></div>
-                </div>
+            <div class="disabled-inputs">
+                <input type="text" id="firstName" class="form-border form-control" name="first_name" value="{{ member.first_name }}" required disabled>
+            
+                <input type="text" id="lastName" class="form-border form-control" name="last_name" value="{{ member.last_name }}" required disabled>
             </div>
-            <div class=" form-control-3 ">
+
+            <div class="posting-form">
+                <input class="hidden-col" type="number" id="member_id2" class="form-border" name="member_id2" value="" required>
+                <input type="date" class="form-border" name="giving_date" required>
+            
+                <input type="number" class="form-border" name="offering_amount" placeholder="Offering Amount" required>
+                <input type="number" class="form-border" name="tithe_amount" placeholder="Tithe Amount" required>
+                <input type="number" class="form-border" name="building_fund_amount" placeholder="Building Fund Amount" required>
+                <input type="number" class="form-border" name="Other_amount" placeholder="Other Amount" required>
+            </div>
+            <div class="posting-button">
+                <button class="btn btn-outline-info form-border" type="submit">Post</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% comment %} <div class=" form-control-3 ">
                 <div class="hidden-col">
                     <input type="number" id="member_id2" class="form-border" name="member_id2" value="" required>
                 </div>
@@ -124,11 +93,5 @@
                 <div class="flex-content-2">
                     <input type="number" class="form-border" name="Other_amount" placeholder="Other Amount" required>
                 </div>
-            </div>
-            <div class="form-group">
-                <button class="btn btn-outline-info form-border" type="submit">Post</button>
-            </div>
-        </form>
-    </div>
-</div>
+            </div> {% endcomment %}
 {% endblock content %}
