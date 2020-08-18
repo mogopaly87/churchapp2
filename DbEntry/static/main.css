@@ -371,6 +371,31 @@ body {
   transition: all 2s ease-in-out;
 }
 
+.login-page {
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.login-page.activate {
+  opacity: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 2em 4em;
+  border-radius: 0.25em;
+  -webkit-transition: all 1.5s ease-in-out;
+  transition: all 1.5s ease-in-out;
+}
+
 .margin-top {
   margin-top: 8em;
 }

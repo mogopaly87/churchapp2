@@ -38,6 +38,7 @@ $(document).ready(function () {
   $(".container-edit").addClass("activate");
   $(".form-main").addClass("activate");
   $(".journal-form-main").addClass("activate");
+  $(".login-page").addClass("activate");
   // $("#update-container").addClass("activate");
 
   // used to filter update_giving_list
