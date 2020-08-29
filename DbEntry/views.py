@@ -17,6 +17,7 @@ from .forms import RegForm
 from django.views.decorators.csrf import csrf_exempt
 import git
 from .filters import GivingFilter
+from journal_entry.decorators import allowed_users
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -268,6 +269,8 @@ def get_transaction_object(request, giving_id):
     return render(request, 'update_giving_object.html', {'post': post, 'title': 'Update This Record', 'member_id':post.members_id})
 
 
+@login_required
+@allowed_users(allowed_roles=['supervisor'])
 def filterGivings(request):
     """This view is used to search for givings by date range,
     member, and/or the various giving types (offering, tithe,

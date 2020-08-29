@@ -69,6 +69,7 @@
                 {% if group.name == 'supervisor'  %}
                   <a class="nav-link" href="{% url "taxes:search_for_tax" %}">Tax</a>
                   <a class="nav-link" href="{% url "journal_entry:journal-entry" %}">Journal Entry</a>                
+                  <a class="nav-link" href="{% url "search_givings" %}">Review Givings</a>                
                 {% endif %}
               {% endfor %}
             </ul>
