@@ -50,4 +50,22 @@ $(document).ready(function () {
       });
     });
   });
+  
+  // This changes the input type from 'text' to 'date'
+  //...for date range in 'search givings' template
+  // Used because 'django-filter' generates forms that assigns 'text'
+  //....as 'type' to date inputs. 
+  const oldDate_from = $('#id_giving_date__gt');
+  const newDate_from = oldDate_from.clone();
+  newDate_from.attr("type", "text");
+  newDate_from.insertBefore(oldDate_from);
+  oldDate_from.remove();
+  newDate_from.attr("type", "date");
+
+  const oldDate_to = $('#id_giving_date__lt');
+  const newDate_to = oldDate_to.clone();
+  newDate_to.attr("type", "text");
+  newDate_to.insertBefore(oldDate_to);
+  oldDate_to.remove();
+  newDate_to.attr("type", "date");
 });
