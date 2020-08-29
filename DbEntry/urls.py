@@ -27,6 +27,7 @@ urlpatterns = [
           name='password_reset_complete'),
      path('home/', views.home, name='home_page'),
      path('', auth_views.LoginView.as_view(template_name='users/login.html', redirect_authenticated_user=True), name='login'),
+     path('search-givings/', views.filterGivings, name='search_givings'),
 ]
 
 handler404 = 'DbEntry.views.error_404_view'

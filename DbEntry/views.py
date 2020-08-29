@@ -16,6 +16,7 @@ import logging
 from .forms import RegForm
 from django.views.decorators.csrf import csrf_exempt
 import git
+from .filters import GivingFilter
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -267,7 +268,13 @@ def get_transaction_object(request, giving_id):
     return render(request, 'update_giving_object.html', {'post': post, 'title': 'Update This Record', 'member_id':post.members_id})
 
 
-
+def filterGivings(request):
+    """This view is used to search for givings by date range,
+    member, and/or the various giving types (offering, tithe,
+    building funds, Other)"""
+    giving_list = GivingModel.objects.all()
+    giving_filter = GivingFilter(request.GET, queryset=giving_list)
+    return render(request, 'giving_search_list.html', {'filter': giving_filter})
 
 @csrf_exempt
 def update(request):

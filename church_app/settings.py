@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'phone_field',
     'bootstrap_pagination',
     'storages',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
