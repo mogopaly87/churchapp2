@@ -719,3 +719,16 @@ button:not(.navbar-toggler) {
   right: 0 !important;
   margin-right: 4.5em !important;
 }
+
+.giving-review-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p{
+    margin-bottom: unset;
+  }
+
+}
+.giving-review-container{
+  padding: 0 3em;
+}

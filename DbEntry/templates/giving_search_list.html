@@ -1,13 +1,49 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <form method="get">
+  <form class="giving-review-form" method="get">
     {{ filter.form.as_p }}
     <button type="submit">Search</button>
   </form>
-  <ul>
-  {% for giving in filter.qs %}
-    <li>{{ giving.giving_date }} - {{ giving.offering_amount }}</li>
-  {% endfor %}
-  </ul>
-{% endblock %}
+
+  <div class="giving-review-container">
+      <table class="list-wrapper table table-hover table-dark"> 
+      {% comment %} giving_table list-wrapper  {% endcomment %}
+        <tr>
+          <th scope="col">Giving Date</th>
+          <th scope="col">Offering Amount</th>
+          <th scope="col">Tithe Amount</th>
+          <th scope="col">Building Fund Amount</th>
+          <th scope="col">Other Amount</th>
+        </tr>
+        <div class="list-wrapper">
+          {% for giving in filter.qs %}
+            <tbody id="myTable">
+              <tr class="list-item">
+                <td>
+                  <a href="{% url "update_giving_object" giving.id %}">
+                  {{ giving.giving_date }}
+                </td>
+                <td >
+                  {{ giving.offering_amount }}
+                </td>
+                <td >
+                  {{ giving.tithe_amount }}
+                </td>
+                <td >
+                  {{ giving.building_fund_amount }}
+                </td>
+                <td >
+                  {{ giving.Other_amount }}
+                </td>
+              </tr>
+            </tbody>
+          {% endfor %}
+        </div>
+      </table>
+      {% if filter.qs %}
+        <div class="container form-main"><div id="pagination-container"></div></div>
+      {% endif %}
+    </div>
+    
+{% endblock content %}
