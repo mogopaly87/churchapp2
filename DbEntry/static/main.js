@@ -68,4 +68,7 @@ $(document).ready(function () {
   newDate_to.insertBefore(oldDate_to);
   oldDate_to.remove();
   newDate_to.attr("type", "date");
+
+
+  $(".alert-info").addClass("alert-info-custom");
 });

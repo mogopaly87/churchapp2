@@ -931,7 +931,7 @@ button:not(.navbar-toggler).search-buttons {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
 
-.alert {
+.alert-info-custom {
   position: absolute !important;
   width: 30% !important;
   right: 0 !important;
