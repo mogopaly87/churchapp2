@@ -12,9 +12,13 @@ class GivingFilter(django_filters.FilterSet):
         super(GivingFilter, self).__init__(*args, **kwargs)
         self.filters['giving_date__gt'].label = 'Start Date'
         self.filters['giving_date__lt'].label = 'End Date'
+        self.filters['members__first_name__icontains'].label = 'First Name'
+        self.filters['members__last_name__icontains'].label = 'Last Name'
 
     class Meta:
         model = GivingModel
         fields = {
             'giving_date':['gt', 'lt'],
+            'members__first_name':['icontains'],
+            'members__last_name':['icontains'],
         }

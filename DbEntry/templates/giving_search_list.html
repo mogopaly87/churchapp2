@@ -11,6 +11,7 @@
       {% comment %} giving_table list-wrapper  {% endcomment %}
         <tr>
           <th scope="col">Giving Date</th>
+          <th scope="col">Name</th>
           <th scope="col">Offering Amount</th>
           <th scope="col">Tithe Amount</th>
           <th scope="col">Building Fund Amount</th>
@@ -21,8 +22,11 @@
             <tbody id="myTable">
               <tr class="list-item">
                 <td>
-                  <a href="{% url "update_giving_object" giving.id %}">
-                  {{ giving.giving_date }}
+                  {% comment %} <a href="{% url "update_giving_object" giving.id %}"> {% endcomment %}
+                  <strong>{{ giving.giving_date }}</strong>
+                </td>
+                <td >
+                  {{ giving.members.first_name }} {{ giving.members.last_name }}
                 </td>
                 <td >
                   {{ giving.offering_amount }}
