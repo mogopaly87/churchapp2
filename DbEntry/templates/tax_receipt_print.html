@@ -36,7 +36,8 @@
             <strong>For the year ending : December 31, {{ tax_year }}</strong>
           </p>
           <p><strong>Date Issued : {{ date_issued }}</strong></p>
-          <p><strong>Receipt Number :</strong> CHURCH-20-0{{ member.id }}</p>
+          {% comment %} CHURCH will be replaced by CMFI in main application {% endcomment %}
+          <p><strong>Receipt Number :</strong> CHURCH-{{ tax_year }}{{ member.slug }}</p>
           <p><strong>Receipt Issued At :</strong> St. John's, NL</p>
         </div>
         <div class="notice">

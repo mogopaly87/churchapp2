@@ -91,11 +91,11 @@ class GiveView(ListView):
         # since the page automatically passes 'None' to the 'query' variable
         #..here we check if what is passed is not 'None' before query is run
         if not query == None:
-            queryset = RegistrationModel.objects.filter(Q(first_name__iexact=query) | Q(last_name__iexact=query))
+            queryset = RegistrationModel.objects.filter(Q(first_name__icontains=query) | Q(last_name__icontains=query))
             # if a valid query, check if name entered exists in db
             if queryset.exists():
                 # if name exists, retrieve queryset
-                return RegistrationModel.objects.filter(Q(first_name__iexact=query) | Q(last_name__iexact=query))
+                return RegistrationModel.objects.filter(Q(first_name__icontains=query) | Q(last_name__icontains=query))
             else:
                 # if name not in db return 'info' message
                 messages.info(self.request, 'Sorry, the name you entered cannot be found!')
@@ -148,11 +148,11 @@ class UpdateSearch(ListView):
         # since the page automatically passes 'None' to the 'query' variable
         #..here we check if what is passed is not 'None' before query is run
         if not query == None:
-            queryset = RegistrationModel.objects.filter(Q(first_name__iexact=query) | Q(last_name__iexact=query))
+            queryset = RegistrationModel.objects.filter(Q(first_name__icontains=query) | Q(last_name__icontains=query))
             # if a valid query, check if name entered exists in db
             if queryset.exists():
                 # if name exists, return queryset
-                return RegistrationModel.objects.filter(Q(first_name__iexact=query) | Q(last_name__iexact=query))
+                return RegistrationModel.objects.filter(Q(first_name__icontains=query) | Q(last_name__icontains=query))
             else:
                 # if name not in db, return 'info' message
                 messages.info(self.request, 'Sorry, the name you entered cannot be found!')
@@ -211,11 +211,11 @@ class Correct_Giving_Search(ListView):
             # since the page automatically passes 'None' to the 'query' variable
             #..here we check if what is passed is not 'None' before query is run
             if not query == None:
-                queryset = RegistrationModel.objects.filter(Q(first_name__iexact=query) | Q(last_name__iexact=query))
+                queryset = RegistrationModel.objects.filter(Q(first_name__icontains=query) | Q(last_name__icontains=query))
                 # if a valid query, check if name entered exists in db
                 if queryset.exists():
                     # if name exists, return queryset
-                    return RegistrationModel.objects.filter(Q(first_name__iexact=query) | Q(last_name__iexact=query))
+                    return RegistrationModel.objects.filter(Q(first_name__icontains=query) | Q(last_name__icontains=query))
                 else:
                     # if name not in db, return 'info' message
                     messages.info(self.request, 'Sorry, the name you entered cannot be found!')

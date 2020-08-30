@@ -12,3 +12,4 @@ class GivingModelAdmin(admin.ModelAdmin):
 class RegisterationModelAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'date_of_birth', 'phone', 'street_address', 'id')
     search_fields = ('first_name', 'last_name')
+    prepopulated_fields = {'slug':('date_of_birth', 'last_name', 'first_name',)}

@@ -29,7 +29,7 @@ class RegForm(forms.ModelForm):
                                                     'type': 'email'})
     class Meta:
         model = RegistrationModel
-        fields = '__all__'
+        exclude = ['slug']
         widgets = {
             'date_of_birth': forms.DateInput(attrs={'type':'date'})
         }

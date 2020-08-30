@@ -17,6 +17,7 @@ class RegistrationModel(models.Model):
     country = models.CharField(max_length=20, blank=False)
     phone = PhoneField(blank=True, E164_only=False)
     email = models.EmailField(max_length=30, blank=True)
+    slug = models.SlugField(null=True, unique=True)
 
     class Meta:
         ordering = ('first_name', 'last_name',)
