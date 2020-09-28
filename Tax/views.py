@@ -14,6 +14,7 @@ from django.template import loader, RequestContext
 import pdfkit
 from datetime import date
 import os
+# from .models import Tithely
 
 
 # Create your views here.
@@ -88,3 +89,31 @@ def generate_tax_slip(request, member_id):
         # response.write(output)
         # return response
     return render(request, 'generate_tax_slip.html', {'title': 'Print Tax Slip'})
+
+
+"""USED TO TEST CUSTOM MANAGEMENT COMMAND FOR UPLOADING TITHELY CSV FILE"""
+# import pandas as pd
+# def tithely(request):
+    
+#     df = pd.read_csv(r'C:\Users\mogon\OneDrive\Documents\Django\churchapp2\Tax\tithely_donations.csv', sep=',')
+#     df.columns = ['net_amount', 'fees', 'amount', 'cover_fee', 'first_name',
+#             'last_name', 'giving_type', 'deposit_date', 'trans_date']
+#     df_new = df[['net_amount', 'first_name', 'last_name', 'giving_type', 'trans_date']]
+#     df_new.net_amount.apply(str)
+#     df_new.dropna(inplace=True)
+#     df_new['net_amount'] = df_new['net_amount'].map(lambda x: x.lstrip('$'))
+#     df_new2 = df_new.astype({'net_amount':'float'})
+#     df_new2 = df_new2.astype({'trans_date':'datetime64'})
+    
+#     givings = []
+#     for i in range(len(df_new2)):
+#         givings.append(
+#             Tithely(
+#                 net_amount = df_new2.iloc[i][0],
+#                 first_name = df_new2.iloc[i][1],
+#                 last_name = df_new2.iloc[i][2],
+#                 giving_type = df_new2.iloc[i][3],
+#                 trans_date = df_new2.iloc[i][4]
+#             )
+#         )
+#     Tithely.objects.bulk_create(givings)
